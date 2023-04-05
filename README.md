@@ -171,7 +171,7 @@ public:
 - Create and edit the file :  "Arduino\libraries\lv_conf.h"
   - copy "Arduino\libraries\lvgl\lv_conf_template.h" to "Arduino\libraries\lv_conf.h"
   - Edit "Arduino\libraries\lv_conf.h"
-- Modify the  lvgl library :
+- Modify the lvgl library :
   - Copy the folder "Arduino\libraries\lvgl\demos" to "Arduino\libraries\lvgl\ **src**"
 - Test : LVGL_Arduino_Test.ino
 
