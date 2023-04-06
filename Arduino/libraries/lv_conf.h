@@ -1,9 +1,4 @@
-// D:\_Arduino\2.8inch_ESP32-2432S028R\1-Demo\Demo_Arduino\3_4-4_2.8-LVGL_Arduino\LVGL_Arduino\LVGL_Arduino nach
-// C:\user\mb\Arduino\libraries\lvgl\arduino\LVGL_Arduino2.8\LVGL_Arduino2.8.ino kopiert
-// D:\_Arduino\2.8inch_ESP32-2432S028R\1-Demo\Demo_Arduino\3_4-4_2.8-LVGL_Arduino\TFT_eSPI bottom layer replacement file\lv_conf.h nach
-// C:\user\mb\Arduino\libraries\ kopiert und dann hier angepaßt, siehe unten
-
-// geändert:
+// modified:
 // #if 1                                     /*Set it to "1" to enable content*/
 // #define LV_USE_LOG 1                      // danach funktionieren Fehlerausgabe und Serial Monitor  
 // #define LV_TICK_CUSTOM 1                  // danach ging Touch
