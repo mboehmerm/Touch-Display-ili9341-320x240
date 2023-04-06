@@ -4,9 +4,9 @@ Aliexpress Display ~8€, tested with a ESP32 DevKitC V4 and Arduino IDE 2.0.4
 
 Display works with TFT_eSPI by Bodmer, LovyanGFX and LVGL 8.3.6 
 
-Speed about 32.4fps(40MHz) , 63.0 fps (80MHz)
+Speed about 32.4fps(40MHz), 63.0 fps (80MHz)
 
-![Touch_Display_1 8_SD](pictures/Touch_Display_1.8_SD.png)
+![Touch_Display_1 8_SD](pictures/Touch_Display_ili9341_2.8.jpg)
 
 ## Connections for ESP32 DevKitC V4
 
@@ -31,7 +31,7 @@ Share SPI MOSI, MISO and CLK, so you need only 11 Pin's for 3 SPI devices.
 - Edit the file : Arduino\libraries\TFT_eSPI\User_Setup.h
 - Test : TFT_graphicstest_PDQ_ili9341_Touch.ino (works with TFT_eSPI or LovyanGFX)
 
-![TFT_eSPI](pictures/TFT_graphicstest_PDQ_ili9341_Touch.jpg)
+![TFT_eSPI](pictures/Graphicstest_03.jpg)
 
 Edit Arduino\libraries\TFT_eSPI\User_Setup.h :
 
@@ -87,8 +87,6 @@ Edit Arduino\libraries\TFT_eSPI\User_Setup_select.h :
 ## Configure the library LovyanGFX 1.1.5
 - Create the file : Arduino\libraries\LovyanGFX\src\LGFX_ESP32_ILI9341.hpp
 - Test : Lovyan_Touch_Test.ino and TFT_graphicstest_PDQ3_Touch.ino
-
-![LovyanGFX](pictures/Lovyan_Touch_Test_02.jpg)
 
 LGFX_ESP32_ILI9341.hpp :
 
@@ -175,7 +173,7 @@ public:
   - Copy the folder "Arduino\libraries\lvgl\demos" to "Arduino\libraries\lvgl\ **src**"
 - Test : LVGL_Arduino_Test.ino
 
-![LVGL](pictures/LVGL_Widgets.jpg)
+![LVGL](pictures/LVGL_Widget_01.jpg)
 
 Modified lines in Arduino\libraries\lv_conf.h :
 ```java
