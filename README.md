@@ -88,6 +88,8 @@ Edit Arduino\libraries\TFT_eSPI\User_Setup_select.h :
 - Create the file : Arduino\libraries\LovyanGFX\src\LGFX_ESP32_ILI9341.hpp
 - Test : TFT_graphicstest_PDQ3_Touch.ino
 
+![Lovyan Touch TestTFT](pictures/Lovyan_Touch_Test.jpg)
+
 LGFX_ESP32_ILI9341.hpp :
 
 ```c++

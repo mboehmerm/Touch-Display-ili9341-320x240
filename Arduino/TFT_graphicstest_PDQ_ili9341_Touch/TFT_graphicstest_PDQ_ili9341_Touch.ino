@@ -18,7 +18,7 @@
 
 #include "SPI.h"
 
-#define Lovyan
+//#define Lovyan  // uncomment for using LovyanGFX
 #ifdef Lovyan
   #include <LGFX_ESP32_ILI9341.hpp>
   #include <LGFX_TFT_eSPI.hpp>
@@ -37,21 +37,20 @@ void setup() {
   Serial.begin(115200);
   while (!Serial);
   Serial.println(""); Serial.println("");
+
+  tft.init();
+  tft.setRotation(0);
+
 #ifdef Lovyan
   Serial.println("LovyanGFX library Test!");
+  uint16_t calData[8] = {3890, 340, 3900, 3895, 235, 340, 235, 3900};
+  tft.setTouchCalibrate(calData);
 #else
   Serial.println("Bodmer's TFT_eSPI library Test!"); 
+  uint16_t calData[5] = { 255, 3560, 355, 3540, 4 }; // Rotation 0
+  tft.setTouch(calData);
 #endif
  
-  tft.init();
-  //tft.setRotation(0);
-  //uint16_t calData[5] = { 255, 3560, 355, 3540, 4 }; // Rotation 0
-
-  //tft.setRotation(1);
-  //uint16_t calData[5] = { 355, 3540, 255, 3560, 7 }; // Rotation 1 LVGL
-
-  //tft.setTouch(calData);
-  
 }
 
 void loop(void)
@@ -242,7 +241,7 @@ void loop(void)
 	tft.println(F("Benchmark Complete!"));
 
   tft.setTextColor(TFT_RED);
-  tft.print(F("Press Touch to repeat !"));
+  tft.print(F("Touch to repeat !"));
 
   uint16_t x = 0, y = 0; // To store the touch coordinates  // Touch test
   bool pressed;
