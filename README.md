@@ -63,7 +63,7 @@ Edit Arduino\libraries\TFT_eSPI\User_Setup.h :
 
 //Other options
 #define SPI_FREQUENCY       40000000 // 32.4 fps works fine
-//#define SPI_FREQUENCY     80000000 // 63.0 fps works fine but problems with examples, that use DMA)
+//#define SPI_FREQUENCY     80000000 // 63.0 fps works fine but problems with examples, that use DMA.
 
 #define SPI_READ_FREQUENCY  20000000
 #define SPI_TOUCH_FREQUENCY  2500000
@@ -86,7 +86,7 @@ Edit Arduino\libraries\TFT_eSPI\User_Setup_select.h :
 
 ## Configure the library LovyanGFX 1.1.5
 - Create the file : Arduino\libraries\LovyanGFX\src\LGFX_ESP32_ILI9341.hpp
-- Test : Lovyan_Touch_Test.ino and TFT_graphicstest_PDQ3_Touch.ino
+- Test : TFT_graphicstest_PDQ3_Touch.ino
 
 LGFX_ESP32_ILI9341.hpp :
 
