@@ -79,8 +79,9 @@ Edit Arduino\libraries\TFT_eSPI\User_Setup_select.h :
 ```java
 // Only **ONE** line below should be uncommented to define your setup.
 
-//#include <User_Setup.h>                        // Default setup is root library folder
-#include <User_Setups/Setup402_ILI9341_Touch.h>  // new : Setup file for ST7735 with touch
+//#include <User_Setup.h>                         // Default setup is root library folder
+//#include <User_Setups/Setup401_ST7735_Touch.h>  // new : Setup file for  ST7735 1.8" with touch, ST7735_GREENTAB2
+#include <User_Setups/Setup402_ILI9341_Touch.h>   // new : Setup file for ili9341 2.8" with touch
 ```
 
 ## Install and configure the library LovyanGFX 1.1.5
