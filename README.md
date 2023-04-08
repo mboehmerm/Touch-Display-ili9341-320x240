@@ -27,7 +27,7 @@ Share SPI MOSI, MISO and CLK, so you need only 11 Pin's for 3 SPI devices.
 |      | VCC   |       |         | 3.3V           |
 |      | LED   |       |         | 3.3V           |
 
-## Configure the library TFT_eSPI
+## Configure the library TFT_eSPI 2.5.0
 - Edit the file : Arduino\libraries\TFT_eSPI\User_Setup.h
 - Test : TFT_graphicstest_PDQ_ili9341_Touch.ino (works with TFT_eSPI or LovyanGFX)
 
