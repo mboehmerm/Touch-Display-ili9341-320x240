@@ -206,6 +206,7 @@ Modified lines in Arduino\libraries\lv_conf.h :
 - Modify the lvgl library :
   - Copy the examples folder "Arduino\libraries\lvgl\examples" to "Arduino\libraries\lvgl\src\examples"
 - Test : LVGL_Arduino_r0_examples ( lv_example_msgbox_1(); )
+- Doku : https://docs.lvgl.io/master/examples.html
 
 LVGL_Arduino_r1 :
 ![LVGL example](pictures/LVGL_example_msgbox.jpg)
