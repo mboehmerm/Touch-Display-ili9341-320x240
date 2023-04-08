@@ -27,7 +27,7 @@ Share SPI MOSI, MISO and CLK, so you need only 11 Pin's for 3 SPI devices.
 |      | VCC   |       |         | 3.3V           |
 |      | LED   |       |         | 3.3V           |
 
-## Configure the library TFT_eSPI 2.5.0
+## Install and configure the library TFT_eSPI 2.5.0
 - Edit the file : Arduino\libraries\TFT_eSPI\User_Setup.h
 - Test : TFT_graphicstest_PDQ_ili9341_Touch.ino (works with TFT_eSPI or LovyanGFX)
 
@@ -84,7 +84,7 @@ Edit Arduino\libraries\TFT_eSPI\User_Setup_select.h :
 #include <User_Setups/Setup402_ILI9341_Touch.h>  // new : Setup file for ST7735 with touch
 ```
 
-## Configure the library LovyanGFX 1.1.5
+## Install and configure the library LovyanGFX 1.1.5
 - Create the file : Arduino\libraries\LovyanGFX\src\LGFX_ESP32_ILI9341.hpp
 - Test : TFT_graphicstest_PDQ3_Touch.ino
 
@@ -166,13 +166,14 @@ public:
   }
 };
 ```
-## Configure LVGL 8.3.6 
-- First configure the Library TFT_eSPI. 
-- Create and edit the file :  "Arduino\libraries\lv_conf.h"
+## Install and configure LVGL 8.3.6 
+- First install and configure the Library TFT_eSPI. 
+- Install only LVGL 8.3.6 "Note that the examples and demos are now part of the main LVGL library."
+- Create and edit the file : "Arduino\libraries\lv_conf.h"
   - copy "Arduino\libraries\lvgl\lv_conf_template.h" to "Arduino\libraries\lv_conf.h"
   - Edit "Arduino\libraries\lv_conf.h"
 - Modify the lvgl library :
-  - Copy the demos folder "Arduino\libraries\lvgl\demos" to "Arduino\libraries\lvgl\ **src**"
+  - Copy the demos folder "Arduino\libraries\lvgl\demos" to "Arduino\libraries\lvgl\ **src**\demos"
 - Test : LVGL_Arduino_rx (where x is the rotation)
 
 LVGL_Arduino_rx is the original LVGL_demo.ino of LVGL 8.3.6 with all modifications i needed to compile and get the touch working correctly with Arduino IDE 2.0.4, TFT_eSPI and ili9341.
@@ -201,5 +202,13 @@ Modified lines in Arduino\libraries\lv_conf.h :
 #define LV_USE_DEMO_BENCHMARK 1
 #define LV_USE_DEMO_STRESS 1
 ```
+
+## Using the examples included in LVGL 8.3.6 
+- Modify the lvgl library :
+  - Copy the examples folder "Arduino\libraries\lvgl\examples" to "Arduino\libraries\lvgl\src\examples"
+- Test : LVGL_Arduino_r0_examples ( lv_example_msgbox_1(); )
+
+LVGL_Arduino_r1 :
+![LVGL example](pictures/LVGL_example_msgbox.jpg)
 
 <!-- unvisible -->
