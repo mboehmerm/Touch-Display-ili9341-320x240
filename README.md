@@ -172,7 +172,7 @@ public:
   - copy "Arduino\libraries\lvgl\lv_conf_template.h" to "Arduino\libraries\lv_conf.h"
   - Edit "Arduino\libraries\lv_conf.h"
 - Modify the lvgl library :
-  - Copy the folder "Arduino\libraries\lvgl\demos" to "Arduino\libraries\lvgl\ **src**"
+  - Copy the demos folder "Arduino\libraries\lvgl\demos" to "Arduino\libraries\lvgl\ **src**"
 - Test : LVGL_Arduino_rx (where x is the rotation)
 
 LVGL_Arduino_rx is the original LVGL_demo.ino of LVGL 8.3.6 with all modifications i needed to compile and get the touch working correctly with Arduino IDE 2.0.4 and ili9341.
