@@ -173,16 +173,22 @@ public:
   - Edit "Arduino\libraries\lv_conf.h"
 - Modify the lvgl library :
   - Copy the folder "Arduino\libraries\lvgl\demos" to "Arduino\libraries\lvgl\ **src**"
-- Test : LVGL_Arduino_Test.ino
+- Test : LVGL_Arduino_rx (where x is the rotation)
 
-![LVGL](pictures/LVGL_Widget_01.jpg)
+LVGL_Arduino_rx is the original LVGL_demo.ino of LVGL 8.3.6 with all modifications i needed to compile and get the touch working correctly with Arduino IDE 2.0.4 and ili9341.
+
+LVGL_Arduino_r0 :
+![LVGL R0](pictures/LVGL_Widget_r0_01.jpg)
+
+LVGL_Arduino_r1 :
+![LVGL R3](pictures/LVGL_Widget_01.jpg)
 
 Modified lines in Arduino\libraries\lv_conf.h :
 ```java
 #if 1                            /* Set it to "1" to enable content */
 #define LV_COLOR_DEPTH 16
 #define LV_TICK_CUSTOM 1         // Touch works only with 1
-#define LV_USE_LOG 1             // See LVGL-warnings in the serial monitor
+#define LV_USE_LOG 1             // See the LVGL-warnings in the serial monitor
 #define LV_FONT_MONTSERRAT_12 1 
 #define LV_FONT_MONTSERRAT_14 1
 #define LV_FONT_MONTSERRAT_18 1
