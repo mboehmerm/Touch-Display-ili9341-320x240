@@ -77,7 +77,6 @@ Speedtest : Arduino\libraries\TFT_eSPI\examples\DMA test\Bouncy_Circles\Bouncy_C
 
 Edit Arduino\libraries\TFT_eSPI\User_Setup_select.h :
 ```java
-
 // Only **ONE** line below should be uncommented to define your setup.
 
 //#include <User_Setup.h>                        // Default setup is root library folder
