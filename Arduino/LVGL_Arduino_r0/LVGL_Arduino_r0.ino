@@ -22,12 +22,13 @@ screen rotation : 0
 
 /*Change to your screen resolution*/
 //static const uint16_t screenWidth  = 320;   //// original, rotation 1 or 3
-//static const uint16_t screenHeight = 240;   //// original
+//static const uint16_t screenHeight = 240;   //// dito
 static const uint16_t screenWidth  = 240;     //// modified, rotation 0 or 2
-static const uint16_t screenHeight = 320;     //// modified
+static const uint16_t screenHeight = 320;     //// dito
 
 static lv_disp_draw_buf_t draw_buf;
-static lv_color_t buf[ screenWidth * 10 ];
+//static lv_color_t buf[ screenWidth * 10 ];    // screen buffer
+static lv_color_t buf[ screenWidth * screenHeight / 4 ];
 
 TFT_eSPI tft = TFT_eSPI(screenWidth, screenHeight); /* TFT instance */
 
@@ -150,13 +151,13 @@ void setup()
     lv_example_btn_1();
    */
 
-    // uncomment one of these demos
-    lv_demo_widgets();            // OK
+    // uncomment ONE of these demos   ( OK = enabled in Arduino/libraries/lv_conf.h )
+    lv_demo_widgets();               // OK
     // lv_demo_benchmark();          // OK
-    // lv_demo_keypad_encoder();     // works, but I haven't an encoder
-    // lv_demo_music();              // NOK
-    // lv_demo_printer();
-    // lv_demo_stress();             // seems to be OK
+    // lv_demo_keypad_encoder();     // OK works, but I haven't an encoder
+    // lv_demo_music();              // NOT TESTED
+    // lv_demo_printer();            // MISSING
+    // lv_demo_stress();             // OK
 #endif
     Serial.println( "Setup done" );
 }

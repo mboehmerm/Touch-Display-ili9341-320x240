@@ -13,6 +13,7 @@
 // #define LV_USE_DEMO_KEYPAD_AND_ENCODER 1  // src\demos\lv_demo_keypad_encoder.c angepaßt
 // #define LV_USE_DEMO_BENCHMARK 1           
 // #define LV_DEMO_BENCHMARK_RGB565A8 0      // 1 crasht
+// #define LV_USE_DEMO_STRESS 1
 
 /**
  * @file lv_conf.h
@@ -756,7 +757,7 @@
 #endif
 
 /*Stress test for LVGL*/
-#define LV_USE_DEMO_STRESS 0
+#define LV_USE_DEMO_STRESS 1
 
 /*Music player demo*/
 #define LV_USE_DEMO_MUSIC 0
