@@ -4,7 +4,7 @@ Aliexpress Display ~8€, tested with a ESP32 DevKitC V4 and Arduino IDE 2.0.4
 
 Display works with TFT_eSPI by Bodmer, LovyanGFX and LVGL 8.3.6 
 
-Speed about 32.4fps(40MHz), 63.0 fps (80MHz)
+Speed about 32fps(40MHz), 63fps(80MHz), 105fps(DMA 40MHz boing ball)
 
 ![Touch_Display_1 8_SD](pictures/Touch_Display_ili9341_2.8.jpg)
 
