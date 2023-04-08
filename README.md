@@ -177,7 +177,7 @@ public:
 
 LVGL_Arduino_rx is the original LVGL_demo.ino of LVGL 8.3.6 with all modifications i needed to compile and get the touch working correctly with Arduino IDE 2.0.4, TFT_eSPI and ili9341.
 
-> Display works perfect with 40MHz. With 80MHz there are some distortions probably because LVGL uses DMA.
+> Display works perfect with 40MHz. With 80MHz there are some distortions may be because LVGL uses DMA.
 
 LVGL_Arduino_r0 :
 ![LVGL R0](pictures/LVGL_Widget_r0_01.jpg)
