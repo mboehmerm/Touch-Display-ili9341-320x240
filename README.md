@@ -199,6 +199,7 @@ Modified lines in Arduino\libraries\lv_conf.h :
 #define LV_DEMO_WIDGETS_SLIDESHOW 1
 #define LV_USE_DEMO_KEYPAD_AND_ENCODER 1
 #define LV_USE_DEMO_BENCHMARK 1
+#define LV_USE_DEMO_STRESS 1
 ```
 
 <!-- unvisible -->
