@@ -71,7 +71,7 @@ Edit Arduino\libraries\TFT_eSPI\User_Setup.h :
 ```
 
 ## Alternative configuration of the library TFT_eSPI 2.5.0
-- Create the new File : Arduino\libraries\Setup402_ILI9341_Touch.h with your configuration
+- Create a new File with your configuration data : Arduino\libraries\Setup402_ILI9341_Touch.h
 - Edit the file : Arduino\libraries\TFT_eSPI\User_Setup_Select.h
 
 Edit Arduino\libraries\TFT_eSPI\User_Setup_select.h :
@@ -82,8 +82,8 @@ Edit Arduino\libraries\TFT_eSPI\User_Setup_select.h :
 
 // Setup file in folder Arduino/libraries (updates will not overwrite your setups)
 //#include <../Setup401_ST7735_Touch.h>         // new : Setup file for  ST7735 1.8" with touch, ST7735_GREENTAB2
-#include <../Setup402_ILI9341_Touch.h>          // new : Setup file for ili9341 2.8" with touch
-//#include <../Setup403_ILI9341_Touch_80MHz.h>  // new : Setup file for ili9341 2.8" with touch
+#include <../Setup402_ILI9341_Touch.h>          // new : Setup file for ili9341 2.8" with touch, 40MHz
+//#include <../Setup403_ILI9341_Touch_80MHz.h>  // new : Setup file for ili9341 2.8" with touch, 80MHz
 ```
 
 ## Install and configure the library LovyanGFX 1.1.5
