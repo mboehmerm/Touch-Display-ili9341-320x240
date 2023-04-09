@@ -78,7 +78,9 @@ Edit Arduino\libraries\TFT_eSPI\User_Setup_select.h :
 ```java
 // Only **ONE** line below should be uncommented to define your setup.
 
-//#include <User_Setup.h>                       // Default setup is root library folder
+//#include <User_Setup.h>                       // Default setup in root library folder
+
+// Setup file in folder Arduino/libraries (updates will not overwrite your setups)
 //#include <../Setup401_ST7735_Touch.h>         // new : Setup file for  ST7735 1.8" with touch, ST7735_GREENTAB2
 #include <../Setup402_ILI9341_Touch.h>          // new : Setup file for ili9341 2.8" with touch
 //#include <../Setup403_ILI9341_Touch_80MHz.h>  // new : Setup file for ili9341 2.8" with touch
