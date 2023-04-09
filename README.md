@@ -69,7 +69,6 @@ Edit Arduino\libraries\TFT_eSPI\User_Setup.h :
 #define SPI_TOUCH_FREQUENCY  2500000
 
 ```
-Speedtest : Arduino\libraries\TFT_eSPI\examples\DMA test\Bouncy_Circles\Bouncy_Circles.ino
 
 ## Alternative configuration of the library TFT_eSPI 2.5.0
 - Create the new File : Arduino\libraries\TFT_eSPI\User_Setups\Setup402_ILI9341_Touch.h
