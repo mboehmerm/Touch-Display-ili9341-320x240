@@ -27,18 +27,15 @@
 
 // Only ONE line below should be uncommented to define your setup.  Add extra lines and files as needed.
 
-//#include <User_Setup.h>                                 // Default setup is root library folder
+//#include <User_Setup.h>                  // Default setup is root library folder
 
-//#include <User_Setups/Setup401_ST7735_Touch.h>          // new : Setup file for  ST7735 1.8" with touch, ST7735_GREENTAB2
-//#include <User_Setups/Setup402_ILI9341_Touch.h>         // new : Setup file for ili9341 2.8" with touch, 80MHz
-#include <User_Setups/Setup403_ILI9341_Touch_40MHz.h>     // new : Setup file for ili9341 2.8" with touch, 40MHz
-
-//#include <../Setup401_ST7735_Touch.h>                   // same setup files in folder Arduino/libraries 
-//#include <../Setup402_ILI9341_Touch.h>
-//#include <../Setup403_ILI9341_Touch_40MHz.h> 
+// Setup file in folder Arduino/libraries (updates will not overwrite your setups)
+//#include <../Setup401_ST7735_Touch.h>         // new : Setup file for  ST7735 1.8" with touch, ST7735_GREENTAB2
+#include <../Setup402_ILI9341_Touch.h>          // new : Setup file for ili9341 2.8" with touch, 40MHz
+//#include <../Setup403_ILI9341_Touch_80MHz.h>  // new : Setup file for ili9341 2.8" with touch, 80MHz
 
 //#include <User_Setups/Setup404_xxxxxx.h> // Setup file für ESP32 xxxx
-
+//#include <../Setup404_xxxxxx.h>          // Setup file für ESP32 xxxx
 
 //#include <User_Setups/Setup1_ILI9341.h>  // Setup file for ESP8266 configured for my ILI9341
 //#include <User_Setups/Setup2_ST7735.h>   // Setup file for ESP8266 configured for my ST7735

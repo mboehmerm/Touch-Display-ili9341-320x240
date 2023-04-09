@@ -1,21 +1,21 @@
 // See SetupX_Template.h for all options available
-#define USER_SETUP_ID 401
+#define USER_SETUP_ID 403
 
 // Driver
-#define ST7735_DRIVER
+#define ILI9341_DRIVER       // Generic driver for common displays
+//#define ILI9341_2_DRIVER   // Alternative ILI9341 driver, see https://github.com/Bodmer/TFT_eSPI/issues/1172
 
-#define TFT_WIDTH  128
-#define TFT_HEIGHT 160
-
-#define ST7735_GREENTAB2
+// For ST7789, ST7735 and ILI9163 ONLY, define the pixel width and height in portrait orientation
+// #define TFT_WIDTH  240
+// #define TFT_HEIGHT 320
 
 // For ST7735, ST7789 and ILI9341 ONLY, define the colour order IF the blue and red are swapped on your display
 // Try ONE option at a time to find the correct colour order for your display
 
-//  #define TFT_RGB_ORDER TFT_RGB  // Colour order Red-Green-Blue
-//  #define TFT_RGB_ORDER TFT_BGR  // Colour order Blue-Green-Red
+// #define TFT_RGB_ORDER TFT_RGB  // Colour order Red-Green-Blue
+// #define TFT_RGB_ORDER TFT_BGR  // Colour order Blue-Green-Red
 
-// Pin's
+// Pins
 #define TFT_MISO 19
 #define TFT_MOSI 23
 #define TFT_SCLK 18
@@ -38,15 +38,12 @@
 #define SMOOTH_FONT
 
 // Other options
-// #define SPI_FREQUENCY  20000000
-// #define SPI_FREQUENCY  27000000
-#define SPI_FREQUENCY  40000000    // works fine
-// #define SPI_FREQUENCY  80000000 // works with errors
+#define SPI_FREQUENCY    40000000  // 32.4 fps. works fine. 
+//#define SPI_FREQUENCY  80000000  // 63.0 fps. works but problems examples Bouncy_Circles, boing_ball (DMA)
 
 // Optional reduced SPI frequency for reading TFT
 #define SPI_READ_FREQUENCY  20000000
 
 #define SPI_TOUCH_FREQUENCY  2500000
-
 
 // #define SUPPORT_TRANSACTIONS
