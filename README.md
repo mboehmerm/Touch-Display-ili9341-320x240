@@ -171,20 +171,27 @@ public:
 - Install only LVGL 8.3.6 "Note that the examples and demos are now part of the main LVGL library."
 - Create and edit the file : "Arduino\libraries\lv_conf.h"
   - copy "Arduino\libraries\lvgl\lv_conf_template.h" to "Arduino\libraries\lv_conf.h"
-  - Edit "Arduino\libraries\lv_conf.h"
+  - Edit "Arduino\libraries\lv_conf.h" (see below)
 - Modify the lvgl library :
   - Copy the demos folder "Arduino\libraries\lvgl\demos" to "Arduino\libraries\lvgl\ **src**\demos"
-- Test : LVGL_Arduino_rx (where x is the rotation)
+  - Copy the examples folder "Arduino\libraries\lvgl\examples" to "Arduino\libraries\lvgl\ **src**\examples"
+- Test : LVGL_Arduino_rx
+  - different rotation : modify the line "#define SCREEN_ROTATION **0**"
+  - try other demo or example : uncomment **ONE** of the lines starting with "lv_demo_" or "lv_example_"
 
-LVGL_Arduino_rx is the original LVGL_demo.ino of LVGL 8.3.6 with all modifications i needed to compile and get the touch working correctly with Arduino IDE 2.0.4, TFT_eSPI and ili9341.
+LVGL_Arduino_rx is the original LVGL_demo.ino of LVGL 8.3.6 with all modifications i needed to compile without errors and get the touch working correctly with Arduino IDE 2.0.4, TFT_eSPI and ili9341.
 
-> Display works perfect with 40MHz. With 80MHz there are some distortions may be because LVGL uses DMA.
+> Display works perfect with 40MHz. With 80MHz there are some distortions maybe because LVGL uses DMA.
 
-LVGL_Arduino_r0 :
+LVGL_Arduino_rx with rotation 0 and lv_demo_widgets();
 ![LVGL R0](pictures/LVGL_Widget_r0_01.jpg)
 
-LVGL_Arduino_r1 :
+LVGL_Arduino_rx with rotation 1  and lv_demo_widgets();
 ![LVGL R3](pictures/LVGL_Widget_01.jpg)
+
+LVGL_Arduino_rx with rotation 0 and lv_example_msgbox_1();
+![LVGL example](pictures/LVGL_example_msgbox.jpg)
+- Doku : https://docs.lvgl.io/master/examples.html
 
 Modified lines in Arduino\libraries\lv_conf.h :
 ```java
@@ -202,14 +209,5 @@ Modified lines in Arduino\libraries\lv_conf.h :
 #define LV_USE_DEMO_BENCHMARK 1
 #define LV_USE_DEMO_STRESS 1
 ```
-
-## Using the examples included in LVGL 8.3.6 
-- Modify the lvgl library :
-  - Copy the examples folder "Arduino\libraries\lvgl\examples" to "Arduino\libraries\lvgl\src\examples"
-- Test : LVGL_Arduino_r0_examples ( lv_example_msgbox_1(); )
-- Doku : https://docs.lvgl.io/master/examples.html
-
-LVGL_Arduino_r1 :
-![LVGL example](pictures/LVGL_example_msgbox.jpg)
 
 <!-- unvisible -->

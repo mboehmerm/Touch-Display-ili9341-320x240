@@ -1,11 +1,5 @@
-/*
-
-This the original LVGL_demo.ino 8.3.6 with all modifications i needed to compile and 
-get the touch working correctly with Arduino IDE 2.0.4 and ili9341.
-
-screen rotation : 2
-
-*/
+// This the original LVGL_demo.ino 8.3.6 with all modifications i needed to compile without errors and 
+// get the touch working correctly with Arduino IDE 2.0.4 , TFT_eSPI and ili9341.
 
 /*Using LVGL with Arduino requires some extra steps:
  *Be sure to read the docs here: https://docs.lvgl.io/master/get-started/platforms/arduino.html  */
@@ -18,21 +12,28 @@ screen rotation : 2
  Note that the `lv_examples` library is for LVGL v7 and you shouldn't install it for this version (since LVGL v8)
  as the examples and demos are now part of the main LVGL library. */
 
-#include <demos/lv_demos.h>                   //// modified : added
+#include <demos/lv_demos.h>                               //!! lvgl/src/demos
+#include <examples/lv_examples.h>                         //!! lvgl/src/examples
+
+#define SCREEN_ROTATION 0                                 // set the screen rotation
 
 /*Change to your screen resolution*/
-//static const uint16_t screenWidth  = 320;   //// original, rotation 1 or 3
-//static const uint16_t screenHeight = 240;   //// original
-static const uint16_t screenWidth  = 240;     //// modified, rotation 0 or 2
-static const uint16_t screenHeight = 320;     //// modified
+#if (SCREEN_ROTATION == 1) || (SCREEN_ROTATION == 3)
+  static const uint16_t screenWidth  = 320;               // rotation 1 or 3
+  static const uint16_t screenHeight = 240;
+#else  
+  static const uint16_t screenWidth  = 240;               // rotation 0 or 2
+  static const uint16_t screenHeight = 320;
+#endif
 
 static lv_disp_draw_buf_t draw_buf;
-//static lv_color_t buf[ screenWidth * 10 ];    // screen buffer
-static lv_color_t buf[ screenWidth * screenHeight / 4 ];
+static lv_color_t buf[ screenWidth * screenHeight / 4 ];  // screen buffer size
+//static lv_color_t buf[ screenWidth * 10 ];              // smaller if compile error
 
-TFT_eSPI tft = TFT_eSPI(screenWidth, screenHeight); /* TFT instance */
+TFT_eSPI tft = TFT_eSPI(screenWidth, screenHeight);
 
 #if LV_USE_LOG != 0
+// ------------------------------------------------------------------------------------------ //
 /* Serial debugging */
 void my_print(const char * buf)
 {
@@ -40,10 +41,9 @@ void my_print(const char * buf)
     Serial.flush();
 }
 #endif
-
-/* Display flushing */
-//void my_disp_flush( lv_disp_t *disp, const lv_area_t *area, lv_color_t *color_p )
-void my_disp_flush( lv_disp_drv_t *disp, const lv_area_t *area, lv_color_t *color_p )   //// modified
+// ------------------------------------------------------------------------------------------ //
+// Display flushing
+void my_disp_flush( lv_disp_drv_t *disp, const lv_area_t *area, lv_color_t *color_p )  //!!
 
 {
     uint32_t w = ( area->x2 - area->x1 + 1 );
@@ -56,10 +56,9 @@ void my_disp_flush( lv_disp_drv_t *disp, const lv_area_t *area, lv_color_t *colo
 
     lv_disp_flush_ready( disp );
 }
-
-/*Read the touchpad*/
-//void my_touchpad_read( lv_indev_t * indev_driver, lv_indev_data_t * data )
-void my_touchpad_read( lv_indev_drv_t * indev_driver, lv_indev_data_t * data )           //// modified
+// ------------------------------------------------------------------------------------------ //
+// Read the touchpad
+void my_touchpad_read( lv_indev_drv_t * indev_driver, lv_indev_data_t * data )  //!!modified
 {
     uint16_t touchX, touchY;
 
@@ -74,10 +73,13 @@ void my_touchpad_read( lv_indev_drv_t * indev_driver, lv_indev_data_t * data )  
         data->state = LV_INDEV_STATE_PR;
 
         /*Set the coordinates*/
-        data->point.x = touchX;                      //// ok if screenWidth=240 + screenHeight=320
-        data->point.y = touchY;                      //// ok if screenWidth=240 + screenHeight=320
-        //data->point.x = touchY;                    //// uncomment if screenWidth=320 + screenHeight=240
-        //data->point.y = touchX;                    //// uncomment if screenWidth=320 + screenHeight=240
+        #if (SCREEN_ROTATION == 1) || (SCREEN_ROTATION == 3)
+          data->point.x = touchY;
+          data->point.y = touchX;
+        #else
+          data->point.x = touchX;
+          data->point.y = touchY;
+        #endif
 
         Serial.print( "Data x " );
         Serial.println( touchX );
@@ -86,7 +88,7 @@ void my_touchpad_read( lv_indev_drv_t * indev_driver, lv_indev_data_t * data )  
         Serial.println( touchY );
     }
 }
-
+// ------------------------------------------------------------------------------------------ //
 void setup()
 {
     Serial.begin( 115200 ); /* prepare for possible serial debug */
@@ -103,27 +105,28 @@ void setup()
     lv_log_register_print_cb( my_print ); /* register print function for debugging */
 #endif
 
-    tft.begin();          /* TFT init */
-    tft.setRotation( 2 ); /* 3 = Landscape orientation, flipped */           //// modified
+    tft.begin();
+    tft.setRotation( SCREEN_ROTATION );
 
-    /*Set the touchscreen calibration data,
-     the actual data for your display can be acquired using
-     the Generic -> Touch_calibrate example from the TFT_eSPI library*/
+    /*Set the touchscreen calibration data, the actual data for your display can be acquired using
+        Generic -> Touch_calibrate example from the TFT_eSPI library */
 
-    // r=rotation, w=screenWidth, h=screenHeight
-    //uint16_t calData[5] = { 275, 3620, 264, 3532, 1 };  //// original : r=3, w=320, h=240
-    //uint16_t calData[5] = { 230, 3580, 330, 3600, 0 };  //// modified : r=3, w=320, h=240, touchX + touchY swapped.
-    //uint16_t calData[5] = { 230, 3580, 330, 3600, 6 };  //// modified : r=1, w=320, h=240, touchX + touchY swapped.
-    uint16_t calData[5] = { 230, 3580, 330, 3600, 2 };  //// modified : r=2, w=240, h=320
-    //uint16_t calData[5] = { 230, 3580, 330, 3600, 4 };    //// modified : r=0, w=240, h=320
+    #if SCREEN_ROTATION == 0
+      uint16_t calData[5] = { 230, 3580, 330, 3600, 4 };  //!!modified
+    #elif SCREEN_ROTATION == 1
+      uint16_t calData[5] = { 230, 3580, 330, 3600, 6 };
+    #elif SCREEN_ROTATION == 2
+      uint16_t calData[5] = { 230, 3580, 330, 3600, 2 };
+    #elif SCREEN_ROTATION == 3
+      uint16_t calData[5] = { 230, 3580, 330, 3600, 0 };
+    #endif  
     
     tft.setTouch( calData );
 
     lv_disp_draw_buf_init( &draw_buf, buf, NULL, screenWidth * 10 );
 
     /*Initialize the display*/
-    //static lv_disp_t disp_drv;
-    static lv_disp_drv_t disp_drv;                                        //// modified
+    static lv_disp_drv_t disp_drv;  //!!modified
     lv_disp_drv_init( &disp_drv );
     /*Change the following line to your display resolution*/
     disp_drv.hor_res = screenWidth;
@@ -133,8 +136,7 @@ void setup()
     lv_disp_drv_register( &disp_drv );
 
     /*Initialize the (dummy) input device driver*/
-    //static lv_indev_t indev_drv;
-    static lv_indev_drv_t indev_drv;                                        //// modified
+    static lv_indev_drv_t indev_drv;  //!!modified
     lv_indev_drv_init( &indev_drv );
     indev_drv.type = LV_INDEV_TYPE_POINTER;
     indev_drv.read_cb = my_touchpad_read;
@@ -146,13 +148,16 @@ void setup()
     lv_label_set_text( label, LVGL_Arduino.c_str() );
     lv_obj_align( label, LV_ALIGN_CENTER, 0, 0 );
 #else
-    /* Try an example from the lv_examples Arduino library
-       make sure to include it as written above.
-    lv_example_btn_1();
-   */
+    // *** uncomment only **ONE** of these lines ( examples or demos ) ***
+    
+    // lv_example_btn_1();            
+    // lv_example_msgbox_1();
+    // lv_example_menu_1();
+    // lv_example_tabview_();
+    // lv_example_get_started_1();
+    // ... ( more examples in folder Arduino\libraries\lvgl\src\examples\ )
 
-    // uncomment ONE of these demos   ( OK = enabled in Arduino/libraries/lv_conf.h )
-    lv_demo_widgets();               // OK
+       lv_demo_widgets();            // OK ( OK = enabled in Arduino/libraries/lv_conf.h )
     // lv_demo_benchmark();          // OK
     // lv_demo_keypad_encoder();     // OK works, but I haven't an encoder
     // lv_demo_music();              // NOT TESTED
@@ -161,9 +166,10 @@ void setup()
 #endif
     Serial.println( "Setup done" );
 }
-
+// ------------------------------------------------------------------------------------------ //
 void loop()
 {
     lv_timer_handler(); /* let the GUI do its work */
     delay( 5 );
 }
+// ------------------------------------------------------------------------------------------ //
