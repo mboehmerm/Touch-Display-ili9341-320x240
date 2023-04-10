@@ -27,6 +27,8 @@ Share SPI MOSI, MISO and CLK, so you need only 11 Pin's for 3 SPI devices.
 |      | VCC   |       |         | 3.3V           |
 |      | LED   |       |         | 3.3V           |
 
+TFT_SDO works stable with 16MHz (TFT_ReadWrite_Test.ino).
+
 ## Install and configure the library TFT_eSPI 2.5.0 <a name="espi"></a>
 - Default Windows Arduino folder : C:\Users\<username>\Documents\Arduino
 - Edit the file : Arduino\libraries\TFT_eSPI\User_Setup.h ( [Link](/Arduino/libraries/TFT_eSPI/User_Setup.h) )
@@ -66,7 +68,7 @@ Edit Arduino\libraries\TFT_eSPI\User_Setup.h :
 #define SPI_FREQUENCY       40000000 // 32.4 fps works fine
 //#define SPI_FREQUENCY     80000000 // 63.0 fps works fine but problems with examples that use DMA (?).
 
-#define SPI_READ_FREQUENCY  20000000
+#define SPI_READ_FREQUENCY  16000000 // 20000000 unstable
 #define SPI_TOUCH_FREQUENCY  2500000
 
 ```

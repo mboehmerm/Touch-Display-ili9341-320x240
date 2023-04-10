@@ -100,7 +100,7 @@
 
 // #define ST7735_INITB
 // #define ST7735_GREENTAB
-// #define ST7735_GREENTAB2
+// #define ST7735_GREENTAB2   // perfect
 // #define ST7735_GREENTAB3
 // #define ST7735_GREENTAB128    // For 128 x 128 display
 // #define ST7735_GREENTAB160x80 // For 160 x 80 display (BGR, inverted, 26 offset)
@@ -350,16 +350,17 @@
 // With a ST7735 display more than 27MHz may not work (spurious pixels and lines)
 // With an ILI9163 display 27 MHz works OK.
 
-// #define SPI_FREQUENCY   1000000
-// #define SPI_FREQUENCY   5000000
-// #define SPI_FREQUENCY  10000000
-// #define SPI_FREQUENCY  20000000
-// #define SPI_FREQUENCY  27000000  // default 
-#define SPI_FREQUENCY  40000000     // 32.4 fps. works fine. 
-// #define SPI_FREQUENCY  80000000  // 63.0 fps. works but problems with examples Bouncy_Circles, boing_ball (DMA)
+// #define SPI_FREQUENCY     1000000
+// #define SPI_FREQUENCY     5000000
+// #define SPI_FREQUENCY    10000000
+// #define SPI_FREQUENCY    20000000
+// #define SPI_FREQUENCY    27000000  // default 
+#define SPI_FREQUENCY    40000000  // works fine
+// #define SPI_FREQUENCY    55000000  // STM32 SPI1 only (SPI2 maximum is 27MHz)
+// #define SPI_FREQUENCY    80000000  // works fine. display errors DMA examples
 
 // Optional reduced SPI frequency for reading TFT
-#define SPI_READ_FREQUENCY  20000000
+#define SPI_READ_FREQUENCY  16000000  // 20000000 unstable
 
 // The XPT2046 requires a lower SPI clock rate of 2.5MHz so we define that here:
 #define SPI_TOUCH_FREQUENCY  2500000

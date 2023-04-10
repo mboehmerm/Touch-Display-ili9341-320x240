@@ -38,11 +38,11 @@
 #define SMOOTH_FONT
 
 // Other options
-#define SPI_FREQUENCY    40000000  // 32.4 fps. works fine. 
-//#define SPI_FREQUENCY  80000000  // 63.0 fps. works but problems examples Bouncy_Circles, boing_ball (DMA)
+#define SPI_FREQUENCY       40000000  // 32.4 fps. works fine. 
+//#define SPI_FREQUENCY     80000000  // 63.0 fps. works but problems examples Bouncy_Circles, boing_ball (DMA)
 
 // Optional reduced SPI frequency for reading TFT
-#define SPI_READ_FREQUENCY  20000000
+#define SPI_READ_FREQUENCY  16000000  // 20000000 unstable
 
 #define SPI_TOUCH_FREQUENCY  2500000
 

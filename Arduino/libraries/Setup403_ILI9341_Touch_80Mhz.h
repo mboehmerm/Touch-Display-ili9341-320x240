@@ -1,3 +1,18 @@
+/* ------------------------------------------------------------------------------------------------------------------------
+// Only ONE line below should be uncommented to define your setup.  Add extra lines and files as needed.
+
+//#include <User_Setup.h>                                 // Default setup is root library folder
+
+// Setup file in folder Arduino/libraries/TFT_eSPI/User_Setups
+//#include <User_Setups/Setup401_ST7735_Touch.h>          // new : Setup file for  ST7735 1.8" with touch, ST7735_GREENTAB2
+//#include <User_Setups/Setup402_ILI9341_Touch.h>         // new : Setup file for ili9341 2.8" with touch
+
+// Setup file in folder Arduino/libraries (updates will not overwrite your setups)
+//#include <../Setup401_ST7735_Touch.h>                   // new : Setup file for  ST7735 1.8" with touch, ST7735_GREENTAB2
+#include <../Setup402_ILI9341_Touch.h>                    // new : Setup file for ili9341 2.8" with touch
+
+------------------------------------------------------------------------------------------------------------------------*/
+
 // See SetupX_Template.h for all options available
 #define USER_SETUP_ID 402
 
@@ -38,11 +53,11 @@
 #define SMOOTH_FONT
 
 // Other options
-//#define SPI_FREQUENCY  40000000  // 32.4 fps. works fine. 
-#define SPI_FREQUENCY    80000000  // 63.0 fps. works but problems examples Bouncy_Circles, boing_ball (DMA)
+//#define SPI_FREQUENCY     40000000  // 32.4 fps. works fine. 
+#define SPI_FREQUENCY       80000000  // 63.0 fps. works but problems examples Bouncy_Circles, boing_ball (DMA)
 
 // Optional reduced SPI frequency for reading TFT
-#define SPI_READ_FREQUENCY  20000000
+#define SPI_READ_FREQUENCY  16000000  // 20000000 unstable
 
 #define SPI_TOUCH_FREQUENCY  2500000
 
