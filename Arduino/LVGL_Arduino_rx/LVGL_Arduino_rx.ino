@@ -160,7 +160,7 @@ void setup()
        lv_demo_widgets();            // OK ( OK = enabled in Arduino/libraries/lv_conf.h )
     // lv_demo_benchmark();          // OK
     // lv_demo_keypad_encoder();     // OK works, but I haven't an encoder
-    // lv_demo_music();              // NOT TESTED
+    // lv_demo_music();              // OK ?
     // lv_demo_printer();            // MISSING
     // lv_demo_stress();             // OK
 #endif

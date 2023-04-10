@@ -1,18 +1,19 @@
 // modified:
 // #if 1                                     /*Set it to "1" to enable content*/
-// #define LV_USE_LOG 1                      // danach funktionieren Fehlerausgabe und Serial Monitor  
-// #define LV_TICK_CUSTOM 1                  // danach ging Touch
+// #define LV_USE_LOG 1                      // See the LVGL-warnings in the serial monitor
+// #define LV_TICK_CUSTOM 1                  // touch works only with 1
 // #define LV_FONT_DEFAULT &lv_font_montserrat_12
 // #define LV_COLOR_SCREEN_TRANSP 1
 // #define LV_USE_FONT_COMPRESSED 1
-// #define LV_FONT_MONTSERRAT_12 1           // fehlende Schriften           
+// #define LV_FONT_MONTSERRAT_12 1           // missing fonts      
 // #define LV_FONT_MONTSERRAT_14 1
+// #define LV_FONT_MONTSERRAT_16 1
 // #define LV_FONT_MONTSERRAT_18 1
-// #define LV_USE_DEMO_WIDGETS 1             // src\demos\lv_demo_widgets.c angepaßt
+// #define LV_USE_DEMO_WIDGETS 1
 // #define LV_DEMO_WIDGETS_SLIDESHOW 1
-// #define LV_USE_DEMO_KEYPAD_AND_ENCODER 1  // src\demos\lv_demo_keypad_encoder.c angepaßt
+// #define LV_USE_DEMO_KEYPAD_AND_ENCODER 1
 // #define LV_USE_DEMO_BENCHMARK 1           
-// #define LV_DEMO_BENCHMARK_RGB565A8 0      // 1 crasht
+// #define LV_DEMO_BENCHMARK_RGB565A8 0      // 1 crashes
 // #define LV_USE_DEMO_STRESS 1
 
 /**
@@ -371,7 +372,7 @@
 #define LV_FONT_MONTSERRAT_10 0
 #define LV_FONT_MONTSERRAT_12 1
 #define LV_FONT_MONTSERRAT_14 1
-#define LV_FONT_MONTSERRAT_16 0
+#define LV_FONT_MONTSERRAT_16 1
 #define LV_FONT_MONTSERRAT_18 1
 #define LV_FONT_MONTSERRAT_20 0
 #define LV_FONT_MONTSERRAT_22 0
@@ -760,7 +761,7 @@
 #define LV_USE_DEMO_STRESS 1
 
 /*Music player demo*/
-#define LV_USE_DEMO_MUSIC 0
+#define LV_USE_DEMO_MUSIC 1
 #if LV_USE_DEMO_MUSIC
     #define LV_DEMO_MUSIC_SQUARE    0
     #define LV_DEMO_MUSIC_LANDSCAPE 0

@@ -206,12 +206,14 @@ Modified lines in Arduino\libraries\lv_conf.h :
 #define LV_USE_LOG 1             // See the LVGL-warnings in the serial monitor
 #define LV_FONT_MONTSERRAT_12 1 
 #define LV_FONT_MONTSERRAT_14 1
+#define LV_FONT_MONTSERRAT_16 1
 #define LV_FONT_MONTSERRAT_18 1
 #define LV_FONT_DEFAULT &lv_font_montserrat_12
 #define LV_USE_DEMO_WIDGETS 1                   // Enable demos
 #define LV_DEMO_WIDGETS_SLIDESHOW 1
 #define LV_USE_DEMO_KEYPAD_AND_ENCODER 1
 #define LV_USE_DEMO_BENCHMARK 1
+#define LV_USE_DEMO_MUSIC 1
 #define LV_USE_DEMO_STRESS 1
 ```
 
