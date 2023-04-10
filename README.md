@@ -72,10 +72,10 @@ Edit Arduino\libraries\TFT_eSPI\User_Setup.h :
 ```
 
 ## Alternative configuration of the library TFT_eSPI 2.5.0
-- Create a new File with your configuration data : Arduino\libraries\Setup402_ILI9341_Touch.h ( [Link](/Arduino/libraries/Setup402_ILI9341_Touch.h) )
+- Create a new file with your configuration data : Arduino\libraries\Setup402_ILI9341_Touch.h ( [Link](/Arduino/libraries/Setup402_ILI9341_Touch.h) )
 - Edit the file : Arduino\libraries\TFT_eSPI\User_Setup_Select.h ( [Link](/Arduino/libraries/TFT_eSPI/User_Setup_Select.h) )
 
-Edit Arduino\libraries\TFT_eSPI\User_Setup_select.h :
+Edit User_Setup_select.h :
 ```java
 // Only **ONE** line below should be uncommented to define your setup.
 
