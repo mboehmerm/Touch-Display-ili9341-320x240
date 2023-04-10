@@ -29,8 +29,8 @@ Share SPI MOSI, MISO and CLK, so you need only 11 Pin's for 3 SPI devices.
 
 ## Install and configure the library TFT_eSPI 2.5.0
 - Default Windows Arduino folder : C:\Users\<username>\Documents\Arduino
-- Edit the file : Arduino\libraries\TFT_eSPI\User_Setup.h
-- Test : TFT_graphicstest_PDQ_ili9341_Touch.ino (works with TFT_eSPI or LovyanGFX)
+- Edit the file : Arduino\libraries\TFT_eSPI\User_Setup.h ( [Link](/Arduino/libraries/TFT_eSPI/User_Setup.h) )
+- Test : [TFT_graphicstest_PDQ_ili9341_Touch](/TFT_graphicstest_PDQ_ili9341_Touch/TFT_graphicstest_PDQ_ili9341_Touch.ino) (works with TFT_eSPI or LovyanGFX)
 
 ![TFT_eSPI](pictures/Graphicstest_03.jpg)
 
@@ -72,8 +72,8 @@ Edit Arduino\libraries\TFT_eSPI\User_Setup.h :
 ```
 
 ## Alternative configuration of the library TFT_eSPI 2.5.0
-- Create a new File with your configuration data : Arduino\libraries\Setup402_ILI9341_Touch.h
-- Edit the file : Arduino\libraries\TFT_eSPI\User_Setup_Select.h
+- Create a new File with your configuration data : Arduino\libraries\Setup402_ILI9341_Touch.h ( [Link](/Arduino/libraries/Setup402_ILI9341_Touch.h) )
+- Edit the file : Arduino\libraries\TFT_eSPI\User_Setup_Select.h ( [Link](/Arduino/libraries/TFT_eSPI\User_Setup_Select.h) )
 
 Edit Arduino\libraries\TFT_eSPI\User_Setup_select.h :
 ```java
@@ -88,8 +88,8 @@ Edit Arduino\libraries\TFT_eSPI\User_Setup_select.h :
 ```
 
 ## Install and configure the library LovyanGFX 1.1.5
-- Create the file : Arduino\libraries\LovyanGFX\src\LGFX_ESP32_ILI9341.hpp
-- Test : TFT_graphicstest_PDQ3_Touch.ino
+- Create the file : Arduino\libraries\LovyanGFX\src\LGFX_ESP32_ILI9341.hpp ( [Link](/Arduino/libraries/LovyanGFX/src/LGFX_ESP32_ILI9341.hpp) )
+- Test : [Lovyan_Touch_Test](/Lovyan_Touch_Test/Lovyan_Touch_Test.ino) and [TFT_graphicstest_PDQ_ili9341_Touch](/TFT_graphicstest_PDQ_ili9341_Touch/TFT_graphicstest_PDQ_ili9341_Touch.ino)
 
 ![Lovyan Touch TestTFT](pictures/Lovyan_Touch_Test.jpg)
 
@@ -171,14 +171,14 @@ public:
 ```
 ## Install and configure LVGL 8.3.6 
 - First install and configure the Library TFT_eSPI. 
-- Install only LVGL 8.3.6 "Note that the examples and demos are now part of the main LVGL library."
+- Install only LVGL 8.3.6 library "Note that the examples and demos are now part of the main LVGL library."
 - Create and edit the file : "Arduino\libraries\lv_conf.h"
   - copy "Arduino\libraries\lvgl\lv_conf_template.h" to "Arduino\libraries\lv_conf.h"
-  - Edit "Arduino\libraries\lv_conf.h" (see below)
+  - Edit "Arduino\libraries\lv_conf.h"  ( [Link](/Arduino/libraries/lv_conf.h) )
 - Modify the lvgl library :
   - Copy the demos folder "Arduino\libraries\lvgl\demos" to "Arduino\libraries\lvgl\ **src**\demos"
   - Copy the examples folder "Arduino\libraries\lvgl\examples" to "Arduino\libraries\lvgl\ **src**\examples"
-- Test : LVGL_Arduino_rx
+- Test : [LVGL_Arduino_rx](/LVGL_Arduino_rx/LVGL_Arduino_rx.ino)
   - different rotation : modify the line "#define SCREEN_ROTATION **0**"
   - try other demo or example : uncomment **ONE** of the lines starting with "lv_demo_" or "lv_example_"
 
