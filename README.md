@@ -28,6 +28,7 @@ Share SPI MOSI, MISO and CLK, so you need only 11 Pin's for 3 SPI devices.
 |      | LED   |       |         | 3.3V           |
 
 ## Install and configure the library TFT_eSPI 2.5.0
+- Default Windows Arduino folder : C:\Users\<username>\Documents\Arduino
 - Edit the file : Arduino\libraries\TFT_eSPI\User_Setup.h
 - Test : TFT_graphicstest_PDQ_ili9341_Touch.ino (works with TFT_eSPI or LovyanGFX)
 
@@ -215,7 +216,7 @@ Modified lines in Arduino\libraries\lv_conf.h :
 ## Use Visual Studio Code and PlatformIO
 
 Test PlatformIO with the TFT_eSPI graphicstest example :
-
+- Default Windows PlatformIO folder : C:\Users\<username>\Documents\PlatformIO
 - Install Visual Studio Code and PlatformIO
   - https://platformio.org/install/ide?install=vscode
 - Create a new project in PlatformIO ( [screenshot](/pictures/PlatformIO_New_Project.jpg) )
@@ -249,6 +250,12 @@ Use PlatformIO with the LVGL Arduino Demo :
 LVGL_Arduino_rx with rotation 0  and lv_demo_widgets();
 ![PlatfomIO](pictures/PlatformIO_LVGL_Demo.jpg)
 
+## Use  PlatformIO with lv_conf.h , User_Setup.h and User_Setup_Select.h
+- No build_flags nesessary in platform.ini for TFT_eSPI and lvgl (see below)
+- The library folder [/PlatformIO/Projects/LVGL_Demo/.pio/libdeps/esp32dev](/PlatformIO/Projects/LVGL_Demo/.pio/libdeps/esp32dev) contains the libraries and the configuration files for TFT_eSPI and lvgl
+- "lv_conf.h" should be created here : [/PlatformIO/Projects/LVGL_Demo/.pio/libdeps/esp32dev/lv_conf.h)](/PlatformIO/Projects/LVGL_Demo/.pio/libdeps/esp32dev/lv_conf.h)
+
+platform.ini :
 ```c
 [env:esp32dev]
 platform = espressif32
@@ -257,32 +264,6 @@ framework = arduino
 lib_deps = 
 	lvgl/lvgl@^8.3.4
 	bodmer/TFT_eSPI@^2.5.23
-build_flags =
-  ;###############################################################
-  ; TFT_eSPI library setting here (no need to edit library files)
-  ; otherwise User_Setup.h and User_Setup_Select.h were used in
-  ; PlatformIO\Projects\<project>\.pio\libdeps\esp32dev\TFT_eSPI\
-  ;###############################################################
-  -D USER_SETUP_LOADED=1              ; Set this settings as valid
-  -D ILI9341_DRIVER=1                 ; Select ili9341 driver
-  -D TFT_MISO=19                      ; Define SPI pins
-  -D TFT_MOSI=23
-  -D TFT_SCLK=18
-  -D TFT_CS=15
-  -D TFT_DC=2                         ; Data/Comand pin
-  -D TFT_RST=-1                       ; Reset pin
-  -D TOUCH_CS=4                       ; Define Touch pin 
-  -D SPI_FREQUENCY=40000000           ; Set SPI frequency
-  -D SPI_READ_FREQUENCY=20000000
-  -D SPI_TOUCH_FREQUENCY=2500000
-  -D LOAD_GLCD=1                      ; Load Fonts
-  -D LOAD_FONT2=1
-  -D LOAD_FONT4=1
-  -D LOAD_FONT6=1
-  -D LOAD_FONT7=1
-  -D LOAD_FONT8=1
-  -D LOAD_GFXFF=1
-  -D SMOOTH_FONT=1
 monitor_port=COM13
 monitor_speed=115200
 ```
