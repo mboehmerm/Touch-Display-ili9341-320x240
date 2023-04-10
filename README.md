@@ -214,13 +214,13 @@ Modified lines in Arduino\libraries\lv_conf.h :
 
 ## Use Visual Studio Code and PlatformIO
 
-See Screenshots in the folder [pictures](/pictures/PlatformIO_ New_Project.jpg)
+See Screenshots in the folder [pictures](/pictures).
 
 Test PlatformIO with the TFT_eSPI graphicstest example :
 
 - Install Visual Studio Code and PlatformIO
   - https://platformio.org/install/ide?install=vscode
-- Create a new project in PlatformIO [Screenshot](/pictures/)
+- Create a new project in PlatformIO [Screenshot](/pictures/PlatformIO_New_Project.jpg)
   - Name : ili9341_graphicstest_PDQ
   - Board : Espressif ESP32 Dev Module
   - Framework : Arduino Framework
