@@ -224,9 +224,8 @@ Test PlatformIO with the TFT_eSPI graphicstest example :
   - Name : ili9341_graphicstest_PDQ
   - Board : Espressif ESP32 Dev Module
   - Framework : Arduino Framework
-- Go back to the explorer. Press ![Explorer](pictures/PlatformIO_Left_Explorer.jpg)
-- Edit [platformio.ini](/PlatformIO/Projects/ili9341_graphicstest_PDQ/platformio.ini) ( [screenshot](/pictures/PlatformIO_main.jpg) )
-- Edit [main.cpp](/PlatformIO/Projects/ili9341_graphicstest_PDQ/src/main.cpp) ( [screenshot](/pictures/PlatformIO_platform.ini.jpg) ) 
+- Edit [platformio.ini](/PlatformIO/Projects/ili9341_graphicstest_PDQ/platformio.ini) ! ( [screenshot](/pictures/PlatformIO_main.jpg) )
+- Edit [src/main.cpp](/PlatformIO/Projects/ili9341_graphicstest_PDQ/src/main.cpp) ( [screenshot](/pictures/PlatformIO_platform.ini.jpg) ) 
 - Before uploading :
   - If necessary set environment to ![PlatfomIO](pictures/PlatformIO_Bottom_Default.jpg)
   - Connect the ESP32 DevKitC v4
@@ -244,7 +243,7 @@ Use PlatformIO with the LVGL Arduino Demo :
 - In the folder "PlatformIO\Projects\LVGL_Demo\.pio\libdeps\esp32dev\lvgl\"
   - copy the folder "demos" to "src\demos"
   - copy the folder "examples" to "src\examples"
-- Modify main.cpp (not necessary) : 
+- Modify src/main.cpp (not necessary) : 
   - different rotation : modify the line "#define SCREEN_ROTATION **0**"
   - try other demo or example : uncomment **ONE** of the lines starting with "lv_demo_" or "lv_example_"
 - Before uploading :
