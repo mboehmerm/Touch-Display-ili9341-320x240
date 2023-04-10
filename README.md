@@ -223,7 +223,7 @@ Test PlatformIO with the TFT_eSPI graphicstest example :
   - Name : ili9341_graphicstest_PDQ
   - Board : Espressif ESP32 Dev Module
   - Framework : Arduino Framework
-- Edit [platform.ini](/PlatformIO/Projects/ili9341_graphicstest_PDQ/platformio.ini) ( [screenshot](/pictures/PlatformIO_main.jpg) )
+- Edit [platformio.ini](/PlatformIO/Projects/ili9341_graphicstest_PDQ/platformio.ini) ( [screenshot](/pictures/PlatformIO_main.jpg) )
 - Edit [main.cpp](/PlatformIO/Projects/ili9341_graphicstest_PDQ/src/main.cpp) ( [screenshot](/pictures/PlatformIO_platform.ini.jpg) ) 
 - Before uploading :
   - if necessary set environment ![PlatfomIO](pictures/PlatformIO_Bottom_Default.jpg)
@@ -237,7 +237,7 @@ Use PlatformIO with the LVGL Arduino Demo :
   - Name : LVGL_Demo
   - Board : Espressif ESP32 Dev Module
   - Framework : Arduino Framework
-- Edit [platform.ini](/PlatformIO/Projects/LVGL_Demo/platform.ini )
+- Edit [platformio.ini](/PlatformIO/Projects/LVGL_Demo/platformio.ini )
 - Edit [main.c](/PlatformIO/Projects/LVGL_Demo/src/main.cpp )
 - In the folder "PlatformIO\Projects\LVGL_Demo\.pio\libdeps\esp32dev\lvgl\"
   - copy the folder "demos" to "src\demos"
