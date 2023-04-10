@@ -1,8 +1,8 @@
 # SPI Touch Display ili9341 2.8" 320x240 XPT2046
 
-Aliexpress Display ~8€, tested with a ESP32 DevKitC V4 and Arduino IDE 2.0.4
+Aliexpress Display ~8€, tested with a ESP32 DevKitC V4 and Arduino IDE 2.0.4 / [PlatformIO](#pla)
 
-Display works with TFT_eSPI by Bodmer, LovyanGFX and LVGL 8.3.6 
+Display works with [TFT_eSPI by Bodmer](#espi), [LovyanGFX](#lov) and [LVGL 8.3.6](#lvgl)
 
 Speed Bouncy_Circles : about 32fps(40MHz), 63fps(80MHz), boing_ball : 105fps(40MHz)
 
@@ -27,7 +27,7 @@ Share SPI MOSI, MISO and CLK, so you need only 11 Pin's for 3 SPI devices.
 |      | VCC   |       |         | 3.3V           |
 |      | LED   |       |         | 3.3V           |
 
-## Install and configure the library TFT_eSPI 2.5.0
+## Install and configure the library TFT_eSPI 2.5.0 <a name="espi"></a>
 - Default Windows Arduino folder : C:\Users\<username>\Documents\Arduino
 - Edit the file : Arduino\libraries\TFT_eSPI\User_Setup.h ( [Link](/Arduino/libraries/TFT_eSPI/User_Setup.h) )
 - Test : [TFT_graphicstest_PDQ_ili9341_Touch](/Arduino/TFT_graphicstest_PDQ_ili9341_Touch/TFT_graphicstest_PDQ_ili9341_Touch.ino) (works with TFT_eSPI or LovyanGFX)
@@ -87,7 +87,7 @@ Edit User_Setup_select.h :
 //#include <../Setup403_ILI9341_Touch_80MHz.h>  // new : Setup file for ili9341 2.8" with touch, 80MHz
 ```
 
-## Install and configure the library LovyanGFX 1.1.5
+## Install and configure the library LovyanGFX 1.1.5 <a name="lov"></a>
 - Create the file : Arduino\libraries\LovyanGFX\src\LGFX_ESP32_ILI9341.hpp ( [Link](/Arduino/libraries/LovyanGFX/src/LGFX_ESP32_ILI9341.hpp) )
 - Test : [Lovyan_Touch_Test](/Arduino/Lovyan_Touch_Test/Lovyan_Touch_Test.ino) and [TFT_graphicstest_PDQ_ili9341_Touch](/Arduino/TFT_graphicstest_PDQ_ili9341_Touch/TFT_graphicstest_PDQ_ili9341_Touch.ino)
 
@@ -169,7 +169,7 @@ public:
   }
 };
 ```
-## Install and configure LVGL 8.3.6 
+## Install and configure LVGL 8.3.6 <a name="lvgl"></a>
 - First install and configure the Library TFT_eSPI. 
 - Install only LVGL 8.3.6 library "Note that the examples and demos are now part of the main LVGL library."
 - Create and edit the file : "Arduino\libraries\lv_conf.h"
@@ -213,7 +213,7 @@ Modified lines in Arduino\libraries\lv_conf.h :
 #define LV_USE_DEMO_STRESS 1
 ```
 
-## Use Visual Studio Code and PlatformIO
+## Use Visual Studio Code and PlatformIO <a name="pla"></a>
 
 Test PlatformIO with the TFT_eSPI graphicstest example :
 - Default Windows PlatformIO folder : C:\Users\<username>\Documents\PlatformIO
