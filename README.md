@@ -219,14 +219,16 @@ Test PlatformIO with the TFT_eSPI graphicstest example :
 - Default Windows PlatformIO folder : C:\Users\<username>\Documents\PlatformIO
 - Install Visual Studio Code and PlatformIO
   - https://platformio.org/install/ide?install=vscode
-- Create a new project in PlatformIO ( [screenshot](/pictures/PlatformIO_New_Project.jpg) )
+- Create a new project in PlatformIO
+  - Press PIO Home ![PlatfomIO](pictures/PlatformIO_Bottom_Home.jpg) then click on ![New Project](pictures/PlatformIO_New_Project_Button.jpg).  ( [screenshot](/pictures/PlatformIO_New_Project.jpg) ).
   - Name : ili9341_graphicstest_PDQ
   - Board : Espressif ESP32 Dev Module
   - Framework : Arduino Framework
+- Go back to the explorer. Press ![Explorer](pictures/PlatformIO_Left_Explorer.jpg)
 - Edit [platformio.ini](/PlatformIO/Projects/ili9341_graphicstest_PDQ/platformio.ini) ( [screenshot](/pictures/PlatformIO_main.jpg) )
 - Edit [main.cpp](/PlatformIO/Projects/ili9341_graphicstest_PDQ/src/main.cpp) ( [screenshot](/pictures/PlatformIO_platform.ini.jpg) ) 
 - Before uploading :
-  - if necessary set environment ![PlatfomIO](pictures/PlatformIO_Bottom_Default.jpg)
+  - If necessary set environment to ![PlatfomIO](pictures/PlatformIO_Bottom_Default.jpg)
   - Connect the ESP32 DevKitC v4
 - Upload (Press 
  ![PlatfomIO](pictures/PlatformIO_Bottom_Arrow.jpg) ) ( [screenshot](/pictures/PlatformIO_Upload.jpg) )
@@ -246,7 +248,7 @@ Use PlatformIO with the LVGL Arduino Demo :
   - different rotation : modify the line "#define SCREEN_ROTATION **0**"
   - try other demo or example : uncomment **ONE** of the lines starting with "lv_demo_" or "lv_example_"
 - Before uploading :
-  - if necessary set environment "Default (LVGL_Demo)"
+  - If necessary set environment to "Default (LVGL_Demo)"
   - Connect the ESP32 DevKitC v4
 - Upload  ( [screenshot](/pictures/PlatformIO_Upload_LVGL.jpg) ) 
 
