@@ -30,7 +30,7 @@ Share SPI MOSI, MISO and CLK, so you need only 11 Pin's for 3 SPI devices.
 ## Install and configure the library TFT_eSPI 2.5.0
 - Default Windows Arduino folder : C:\Users\<username>\Documents\Arduino
 - Edit the file : Arduino\libraries\TFT_eSPI\User_Setup.h ( [Link](/Arduino/libraries/TFT_eSPI/User_Setup.h) )
-- Test : [TFT_graphicstest_PDQ_ili9341_Touch](/TFT_graphicstest_PDQ_ili9341_Touch/TFT_graphicstest_PDQ_ili9341_Touch.ino) (works with TFT_eSPI or LovyanGFX)
+- Test : [TFT_graphicstest_PDQ_ili9341_Touch](/Arduino/TFT_graphicstest_PDQ_ili9341_Touch/TFT_graphicstest_PDQ_ili9341_Touch.ino) (works with TFT_eSPI or LovyanGFX)
 
 ![TFT_eSPI](pictures/Graphicstest_03.jpg)
 
@@ -89,7 +89,7 @@ Edit Arduino\libraries\TFT_eSPI\User_Setup_select.h :
 
 ## Install and configure the library LovyanGFX 1.1.5
 - Create the file : Arduino\libraries\LovyanGFX\src\LGFX_ESP32_ILI9341.hpp ( [Link](/Arduino/libraries/LovyanGFX/src/LGFX_ESP32_ILI9341.hpp) )
-- Test : [Lovyan_Touch_Test](/Lovyan_Touch_Test/Lovyan_Touch_Test.ino) and [TFT_graphicstest_PDQ_ili9341_Touch](/TFT_graphicstest_PDQ_ili9341_Touch/TFT_graphicstest_PDQ_ili9341_Touch.ino)
+- Test : [Lovyan_Touch_Test](/Arduino/Lovyan_Touch_Test/Lovyan_Touch_Test.ino) and [TFT_graphicstest_PDQ_ili9341_Touch](/Arduino/TFT_graphicstest_PDQ_ili9341_Touch/TFT_graphicstest_PDQ_ili9341_Touch.ino)
 
 ![Lovyan Touch TestTFT](pictures/Lovyan_Touch_Test.jpg)
 
@@ -178,7 +178,7 @@ public:
 - Modify the lvgl library :
   - Copy the demos folder "Arduino\libraries\lvgl\demos" to "Arduino\libraries\lvgl\ **src**\demos"
   - Copy the examples folder "Arduino\libraries\lvgl\examples" to "Arduino\libraries\lvgl\ **src**\examples"
-- Test : [LVGL_Arduino_rx](/LVGL_Arduino_rx/LVGL_Arduino_rx.ino)
+- Test : [LVGL_Arduino_rx](/Arduino/LVGL_Arduino_rx/LVGL_Arduino_rx.ino)
   - different rotation : modify the line "#define SCREEN_ROTATION **0**"
   - try other demo or example : uncomment **ONE** of the lines starting with "lv_demo_" or "lv_example_"
 
