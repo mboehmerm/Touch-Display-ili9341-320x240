@@ -214,22 +214,21 @@ Modified lines in Arduino\libraries\lv_conf.h :
 
 ## Use Visual Studio Code and PlatformIO
 
-See Screenshots in the folder [pictures](/pictures).
-
 Test PlatformIO with the TFT_eSPI graphicstest example :
 
 - Install Visual Studio Code and PlatformIO
   - https://platformio.org/install/ide?install=vscode
-- Create a new project in PlatformIO [Screenshot](/pictures/PlatformIO_New_Project.jpg)
+- Create a new project in PlatformIO ( [screenshot](/pictures/PlatformIO_New_Project.jpg) )
   - Name : ili9341_graphicstest_PDQ
   - Board : Espressif ESP32 Dev Module
   - Framework : Arduino Framework
-- Edit platform.ini ( use PlatformIO/Projects/ili9341_graphicstest_PDQ/platform.ini )
-- Edit main.c ( PlatformIO/Projects/ili9341_graphicstest_PDQ/src/main.cpp )
+- Edit [platform.ini](/PlatformIO/Projects/ili9341_graphicstest_PDQ/platform.ini) ( [screenshot](/pictures/PlatformIO_main.jpg) )
+- Edit [main.c](/PlatformIO/Projects/ili9341_graphicstest_PDQ/src/main.cpp) ( [screenshot](/pictures/PlatformIO_platform.ini.jpg) ) 
 - Before uploading :
-  - if necessary set environment "Default (ili9341_graphicstest_PDQ)" (bottom line)
+  - if necessary set environment ![PlatfomIO](pictures/PlatformIO_Bottom_Default.jpg)
   - Connect the ESP32 DevKitC v4
-- Upload (Press -> in the bottom line)
+- Upload (Press 
+ ![PlatfomIO](pictures/PlatformIO_Bottom_Arrow.jpg) ) ( [screenshot](/pictures/PlatformIO_Upload.jpg) )
 
 Use PlatformIO with the LVGL Arduino Demo :
 
@@ -237,12 +236,15 @@ Use PlatformIO with the LVGL Arduino Demo :
   - Name : LVGL_Demo
   - Board : Espressif ESP32 Dev Module
   - Framework : Arduino Framework
-- Edit platform.ini ( use PlatformIO/Projects/LVGL_Demo/platform.ini )
-- Edit main.c ( PlatformIO/Projects/LVGL_Demo/src/main.cpp )
+- Edit [platform.ini](/PlatformIO/Projects/LVGL_Demo/platform.ini )
+- Edit [main.c](/PlatformIO/Projects/LVGL_Demo/src/main.cpp )
+- In the folder "PlatformIO\Projects\LVGL_Demo\.pio\libdeps\esp32dev\lvgl\"
+  - copy the folder "demos" to "src\demos"
+  - copy the folder "examples" to "src\examples"
 - Before uploading :
-  - if necessary set environment "Default (LVGL_Demo)" (bottom line)
+  - if necessary set environment "Default (LVGL_Demo)"
   - Connect the ESP32 DevKitC v4
-- Upload (Press -> in the bottom line)
+- Upload 
 
 LVGL_Arduino_rx with rotation 0  and lv_demo_widgets();
 ![PlatfomIO](pictures/PlatformIO_LVGL_Demo.jpg)
