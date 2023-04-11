@@ -165,10 +165,10 @@ void setup()
     // lv_example_msgbox_1();
     // lv_example_menu_1();
     // lv_example_tabview_1();
-    lv_example_get_started_1();
+    // lv_example_get_started_1();
     // ...
 
-    //lv_demo_widgets();               // OK ( OK = enabled in Arduino/libraries/lv_conf.h )
+    lv_demo_widgets();               // OK ( OK = enabled in lv_conf.h or platform.ini)
     // lv_demo_benchmark();          // OK
     // lv_demo_keypad_encoder();     // OK works, but I haven't an encoder
     // lv_demo_music();              // Ok ?
