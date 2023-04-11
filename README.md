@@ -235,6 +235,7 @@ Test PlatformIO with the TFT_eSPI graphicstest example :
 - Before uploading :
   - If necessary set environment to ![PlatfomIO](pictures/PlatformIO_Bottom_Default.jpg)
   - Connect the ESP32 DevKitC v4
+  - Edit in "platform.ini" monitor_port=COM13 
 - Upload (Press 
  ![PlatfomIO](pictures/PlatformIO_Bottom_Arrow.jpg) ) ( [screenshot](/pictures/PlatformIO_Upload.jpg) )
 
