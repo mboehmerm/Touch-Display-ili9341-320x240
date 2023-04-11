@@ -12,23 +12,31 @@
  Note that the `lv_examples` library is for LVGL v7 and you shouldn't install it for this version (since LVGL v8)
  as the examples and demos are now part of the main LVGL library. */
 
-#include <demos/lv_demos.h>                               //!! lvgl/src/demos
-#include <examples/lv_examples.h>                         //!! lvgl/src/examples
+#include <demos/lv_demos.h>                                 //!! lvgl/src/demos
+#include <examples/lv_examples.h>                           //!! lvgl/src/examples
 
-#define SCREEN_ROTATION 0                                 // set the screen rotation
+// PlatformIO doesn't find .c files in subdirectories ? Arduino IDE does. 
+#include <examples/widgets/btn/lv_example_btn_1.c>
+#include <examples/widgets/msgbox/lv_example_msgbox_1.c>
+#include <examples/widgets/menu/lv_example_menu_1.c>
+#include <examples/widgets/tabview/lv_example_tabview_1.c>
+#include <examples/get_started/lv_example_get_started_1.c>
+// ...
+
+#define SCREEN_ROTATION 0                                   // set the screen rotation
 
 /*Change to your screen resolution*/
 #if (SCREEN_ROTATION == 1) || (SCREEN_ROTATION == 3)
-  static const uint16_t screenWidth  = 320;               // rotation 1 or 3
+  static const uint16_t screenWidth  = 320;                 // rotation 1 or 3
   static const uint16_t screenHeight = 240;
 #else  
-  static const uint16_t screenWidth  = 240;               // rotation 0 or 2
+  static const uint16_t screenWidth  = 240;                 // rotation 0 or 2
   static const uint16_t screenHeight = 320;
 #endif
 
 static lv_disp_draw_buf_t draw_buf;
-static lv_color_t buf[ screenWidth * screenHeight / 4 ];  // screen buffer size
-//static lv_color_t buf[ screenWidth * 10 ];              // smaller if compile error
+static lv_color_t buf[ screenWidth * screenHeight / 4 ];    // screen buffer size
+//static lv_color_t buf[ screenWidth * 10 ];                // smaller if compile error
 
 TFT_eSPI tft = TFT_eSPI(screenWidth, screenHeight);
 
@@ -150,17 +158,20 @@ void setup()
 #else
     // *** uncomment only **ONE** of these lines ( examples or demos ) ***
     
+    // PlatformIO doesn't find the .c files in subdirectories. Arduino IDE does. 
+    // see above : #include <examples/...
+    
     // lv_example_btn_1();            
     // lv_example_msgbox_1();
     // lv_example_menu_1();
-    // lv_example_tabview_();
-    // lv_example_get_started_1();
-    // ... ( more examples in folder Arduino\libraries\lvgl\src\examples\ )
+    // lv_example_tabview_1();
+    lv_example_get_started_1();
+    // ...
 
-    lv_demo_widgets();               // OK ( OK = enabled in Arduino/libraries/lv_conf.h )
+    //lv_demo_widgets();               // OK ( OK = enabled in Arduino/libraries/lv_conf.h )
     // lv_demo_benchmark();          // OK
     // lv_demo_keypad_encoder();     // OK works, but I haven't an encoder
-    // lv_demo_music();              // NOT TESTED
+    // lv_demo_music();              // Ok ?
     // lv_demo_printer();            // MISSING
     // lv_demo_stress();             // OK
 #endif

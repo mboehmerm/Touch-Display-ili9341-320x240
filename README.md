@@ -200,16 +200,18 @@ LVGL_Arduino_rx with rotation 0 and lv_example_msgbox_1();
 
 Modified lines in Arduino\libraries\lv_conf.h :
 ```java
-#if 1                            /* Set it to "1" to enable content */
+#if 1                      /* Set it to "1" to enable content */
 #define LV_COLOR_DEPTH 16
-#define LV_TICK_CUSTOM 1         // Touch works only with 1
-#define LV_USE_LOG 1             // See the LVGL-warnings in the serial monitor
+#define LV_TICK_CUSTOM 1   // Touch works only with 1
+#define LV_USE_LOG 1       // enable log and serial monitor
+// fonts 
 #define LV_FONT_MONTSERRAT_12 1 
 #define LV_FONT_MONTSERRAT_14 1
 #define LV_FONT_MONTSERRAT_16 1
 #define LV_FONT_MONTSERRAT_18 1
 #define LV_FONT_DEFAULT &lv_font_montserrat_12
-#define LV_USE_DEMO_WIDGETS 1                   // Enable demos
+// Enable demos
+#define LV_USE_DEMO_WIDGETS 1
 #define LV_DEMO_WIDGETS_SLIDESHOW 1
 #define LV_USE_DEMO_KEYPAD_AND_ENCODER 1
 #define LV_USE_DEMO_BENCHMARK 1
