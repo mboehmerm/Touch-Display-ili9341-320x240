@@ -222,20 +222,20 @@ Modified lines in Arduino\libraries\lv_conf.h :
 ## Use Visual Studio Code and PlatformIO <a name="pla"></a>
 
 Test PlatformIO with the TFT_eSPI graphicstest example :
-- Default Windows PlatformIO folder : C:\Users\<username>\Documents\PlatformIO
+- Default Windows PlatformIO folder : C:\Users\ "username"\Documents\PlatformIO
 - Install Visual Studio Code and PlatformIO
   - https://platformio.org/install/ide?install=vscode
 - Create a new project in PlatformIO
   - Press PIO Home ![PlatfomIO](pictures/PlatformIO_Bottom_Home.jpg) then click on ![New Project](pictures/PlatformIO_New_Project_Button.jpg).  ( [screenshot](/pictures/PlatformIO_New_Project.jpg) ).
   - Name : ili9341_graphicstest_PDQ
   - Board : Espressif ESP32 Dev Module
-  - Framework : Arduino Framework
+  - Framework : Arduino
 - Edit [platformio.ini](/PlatformIO/Projects/ili9341_graphicstest_PDQ/platformio.ini) ! ( [screenshot](/pictures/PlatformIO_main.jpg) )
 - Edit [src/main.cpp](/PlatformIO/Projects/ili9341_graphicstest_PDQ/src/main.cpp) ( [screenshot](/pictures/PlatformIO_platform.ini.jpg) ) 
 - Before uploading :
   - If necessary set environment to ![PlatfomIO](pictures/PlatformIO_Bottom_Default.jpg)
   - Connect the ESP32 DevKitC v4
-  - Edit in "platform.ini" monitor_port=COM13 
+  - Edit in "platformio.ini" monitor_port=COM13 
 - Upload (Press 
  ![PlatfomIO](pictures/PlatformIO_Bottom_Arrow.jpg) ) ( [screenshot](/pictures/PlatformIO_Upload.jpg) )
 
@@ -244,10 +244,10 @@ Use PlatformIO with the LVGL Arduino Demo :
 - Create a new project in PlatformIO
   - Name : LVGL_Demo
   - Board : Espressif ESP32 Dev Module
-  - Framework : Arduino Framework
+  - Framework : Arduino
 - Edit [platformio.ini](/PlatformIO/Projects/LVGL_Demo/platformio.ini )
 - Edit [main.c](/PlatformIO/Projects/LVGL_Demo/src/main.cpp )
-- In the folder "PlatformIO\Projects\LVGL_Demo\.pio\libdeps\esp32dev\lvgl\"
+- In the folder "PlatformIO\Projects\LVGL_Demo\ .pio\libdeps\esp32dev\lvgl\"
   - copy the folder "demos" to "src\demos"
   - copy the folder "examples" to "src\examples"
 - Modify src/main.cpp (not necessary) : 
