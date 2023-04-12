@@ -4,7 +4,7 @@ Aliexpress Display ~8€, tested with a ESP32 DevKitC V4 and Arduino IDE 2.0.4 /
 
 Display works with [TFT_eSPI by Bodmer](#espi), [LovyanGFX](#lov) and [LVGL 8.3.6](#lvgl)
 
-Speed Bouncy_Circles : about 32fps(40MHz), 63fps(80MHz), boing_ball : 105fps(40MHz)
+Speed Bouncy_Circles : about 32fps(40MHz), 63fps(80MHz), boing_ball.ino : 105fps(DMA 40MHz)
 
 ![Touch_Display_1 8_SD](pictures/Touch_Display_ili9341_2.8.jpg)
 
@@ -278,7 +278,5 @@ lib_deps =
 monitor_port=COM13
 monitor_speed=115200
 ```
-
-
 
 <!-- unvisible -->
