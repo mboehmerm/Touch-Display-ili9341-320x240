@@ -59,6 +59,6 @@
 // Optional reduced SPI frequency for reading TFT
 #define SPI_READ_FREQUENCY  16000000  // 20000000 unstable
 
-#define SPI_TOUCH_FREQUENCY  2500000
+#define SPI_TOUCH_FREQUENCY  2000000
 
 // #define SUPPORT_TRANSACTIONS

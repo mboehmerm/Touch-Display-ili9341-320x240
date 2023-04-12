@@ -69,7 +69,7 @@ Edit Arduino\libraries\TFT_eSPI\User_Setup.h :
 //#define SPI_FREQUENCY     80000000 // 63.0 fps works fine but problems with examples that use DMA (?).
 
 #define SPI_READ_FREQUENCY  16000000 // 20000000 unstable
-#define SPI_TOUCH_FREQUENCY  2500000
+#define SPI_TOUCH_FREQUENCY  2000000
 
 ```
 
