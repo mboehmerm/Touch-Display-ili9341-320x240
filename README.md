@@ -174,7 +174,7 @@ public:
 };
 ```
 ## Install and configure LVGL 8.3.6 <a name="lvgl"></a>
-- First install and configure the Library TFT_eSPI. 
+- First install and configure the Library TFT_eSPI ( or LovyanGFX ). 
 - Install only LVGL 8.3.6 library "Note that the examples and demos are now part of the main LVGL library."
 - Create and edit the file : "Arduino\libraries\lv_conf.h"
   - copy "Arduino\libraries\lvgl\lv_conf_template.h" to "Arduino\libraries\lv_conf.h"
@@ -182,7 +182,7 @@ public:
 - Modify the lvgl library :
   - Copy the demos folder "Arduino\libraries\lvgl\demos" to "Arduino\libraries\lvgl\ **src**\demos"
   - Copy the examples folder "Arduino\libraries\lvgl\examples" to "Arduino\libraries\lvgl\ **src**\examples"
-- Test : [LVGL_Arduino_rx](/Arduino/LVGL_Arduino_rx/LVGL_Arduino_rx.ino)
+- Test : [LVGL_Arduino_rx](/Arduino/LVGL_Arduino_rx/LVGL_Arduino_rx.ino) ( TFT_eSPI ) or [LVGL_Arduino_Lovyan](/Arduino/LVGL_Arduino_Lovyan/LVGL_Arduino_Lovyan.ino) ( LovyanGFX )
   - different rotation : modify the line "#define SCREEN_ROTATION **0**"
   - try other demo or example : uncomment **ONE** of the lines starting with "lv_demo_" or "lv_example_"
 
