@@ -6,6 +6,8 @@ Display works with [TFT_eSPI by Bodmer](#espi), [LovyanGFX](#lov) and [LVGL 8.3.
 
 Speed Bouncy_Circles : about 32fps(40MHz), 63fps(80MHz), boing_ball.ino : 105fps(DMA 40MHz)
 
+![LVGL_Demo_PIO_01](pictures/LVGL_Demo_PIO_01.JPG)
+
 ![Touch_Display_1 8_SD](pictures/Touch_Display_ili9341_2.8.jpg)
 
 ## Connections for ESP32 DevKitC V4
@@ -239,7 +241,7 @@ Test PlatformIO with the TFT_eSPI graphicstest example :
 - Upload (Press 
  ![PlatfomIO](pictures/PlatformIO_Bottom_Arrow.jpg) ) ( [screenshot](/pictures/PlatformIO_Upload.jpg) )
 
-Use PlatformIO with the LVGL Arduino Demo :
+Use PlatformIO with the LVGL Arduino Demo and TFT_eSPI:
 
 - Create a new project in PlatformIO
   - Name : LVGL_Demo
@@ -259,7 +261,9 @@ Use PlatformIO with the LVGL Arduino Demo :
 - Upload  ( [screenshot](/pictures/PlatformIO_Upload_LVGL.jpg) ) 
 
 LVGL_Arduino_rx with rotation 0  and lv_demo_widgets();
-![PlatfomIO](pictures/PlatformIO_LVGL_Demo.jpg)
+![LVGL_Demo_PIO_01](pictures/LVGL_Demo_PIO_01.JPG)
+
+Similar is LVGL_Demo_PIO which uses LovyanGFX.
 
 ## Use  PlatformIO with lv_conf.h , User_Setup.h and User_Setup_Select.h
 - No build_flags nesessary in platform.ini for TFT_eSPI and lvgl (see below)
