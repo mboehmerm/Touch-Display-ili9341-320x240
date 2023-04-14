@@ -241,7 +241,7 @@ Test PlatformIO with the TFT_eSPI graphicstest example :
 - Upload (Press 
  ![PlatfomIO](pictures/PlatformIO_Bottom_Arrow.jpg) ) ( [screenshot](/pictures/PlatformIO_Upload.jpg) )
 
-Use PlatformIO with the LVGL Arduino Demo and TFT_eSPI:
+Use PlatformIO with the LVGL Arduino Demo and [TFT_eSPI](/PlatformIO/Projects/LVGL_Demo) ( [LovyanGFX](/PlatformIO/Projects/LVGL_Demo_PIO) ) :
 
 - Create a new project in PlatformIO
   - Name : LVGL_Demo
@@ -261,7 +261,7 @@ Use PlatformIO with the LVGL Arduino Demo and TFT_eSPI:
 - Upload  ( [screenshot](/pictures/PlatformIO_Upload_LVGL.jpg) ) 
 
 LVGL_Arduino_rx with rotation 0  and lv_demo_widgets();
-![LVGL_Demo_PIO_01](pictures/LVGL_Demo_PIO_01.JPG)
+![LVGL_Demo_PIO_01](pictures/LVGL_Demo_PIO_03.JPG)
 
 Similar is LVGL_Demo_PIO which uses LovyanGFX.
 
