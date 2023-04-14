@@ -221,7 +221,7 @@ Modified lines in Arduino\libraries\lv_conf.h :
 #define LV_USE_DEMO_STRESS 1
 ```
 
-#  ![PlatfomIO](pictures/Pio50.png) Use Visual Studio Code and PlatformIO <a name="pla"></a>
+#  Use ![PlatfomIO](pictures/Pio50.png) Visual Studio Code and PlatformIO <a name="pla"></a>
 
 ![PlatfomIO](pictures/PlatformIO_Toolbar.png)
 
