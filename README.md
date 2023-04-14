@@ -1,6 +1,6 @@
 # SPI Touch Display ili9341 2.8" 320x240 XPT2046
 
-Aliexpress Display ~8€, tested with a ESP32 DevKitC V4 and Arduino IDE 2.0.4 / [PlatformIO](#pla)
+Aliexpress Display ~8€, tested with a ESP32 DevKitC V4 and Arduino IDE 2.0.4 / [PlatformIO](#pla)  ![PlatfomIO](pictures/Pio50.png)
 
 Display works with [TFT_eSPI by Bodmer](#espi), [LovyanGFX](#lov) and [LVGL 8.3.6](#lvgl)
 
@@ -221,7 +221,7 @@ Modified lines in Arduino\libraries\lv_conf.h :
 #define LV_USE_DEMO_STRESS 1
 ```
 
-#  Use ![PlatfomIO](pictures/Pio50.png) Visual Studio Code and PlatformIO <a name="pla"></a>
+#  Use Visual Studio Code and PlatformIO <a name="pla"></a>
 
 ![PlatfomIO](pictures/PlatformIO_Toolbar.png)
 
