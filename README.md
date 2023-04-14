@@ -221,29 +221,30 @@ Modified lines in Arduino\libraries\lv_conf.h :
 #define LV_USE_DEMO_STRESS 1
 ```
 
-## Use Visual Studio Code and PlatformIO <a name="pla"></a>
+#  ![PlatfomIO](pictures/Pio50.png) Use Visual Studio Code and PlatformIO <a name="pla"></a>
+
+![PlatfomIO](pictures/PlatformIO_Toolbar.png)
 
 Test PlatformIO with the TFT_eSPI graphicstest example :
 - Default Windows PlatformIO folder : C:\Users\ "username"\Documents\PlatformIO
-- Install Visual Studio Code and PlatformIO
+- Install Visual Studio Code and PlatformIO :
   - https://platformio.org/install/ide?install=vscode
-- Create a new project in PlatformIO
-  - Press PIO Home ![PlatfomIO](pictures/PlatformIO_Bottom_Home.jpg) then click on ![New Project](pictures/PlatformIO_New_Project_Button.jpg).  ( [screenshot](/pictures/PlatformIO_New_Project.jpg) ).
-  - Name : ili9341_graphicstest_PDQ
+- Create a new project in PlatformIO :
+  - Press **Home** and then **New Project**.  ( [screenshot](/pictures/PlatformIO_New_Project.jpg) ).
+  - Name : ili9341_graphicstest_PDQ 
   - Board : Espressif ESP32 Dev Module
   - Framework : Arduino
 - Edit [platformio.ini](/PlatformIO/Projects/ili9341_graphicstest_PDQ/platformio.ini) ! ( [screenshot](/pictures/PlatformIO_main.jpg) )
 - Edit [src/main.cpp](/PlatformIO/Projects/ili9341_graphicstest_PDQ/src/main.cpp) ( [screenshot](/pictures/PlatformIO_platform.ini.jpg) ) 
 - Before uploading :
-  - If necessary set environment to ![PlatfomIO](pictures/PlatformIO_Bottom_Default.jpg)
+  - If necessary set **Environment** to ![PlatfomIO](pictures/PlatformIO_Bottom_Default.jpg)
   - Connect the ESP32 DevKitC v4
   - Edit in "platformio.ini" monitor_port=COM13 
-- Upload (Press 
- ![PlatfomIO](pictures/PlatformIO_Bottom_Arrow.jpg) ) ( [screenshot](/pictures/PlatformIO_Upload.jpg) )
+- Press **Upload** ( [screenshot](/pictures/PlatformIO_Upload.jpg) )
 
 Use PlatformIO with the LVGL Arduino Demo and [TFT_eSPI](/PlatformIO/Projects/LVGL_Demo) ( [LovyanGFX](/PlatformIO/Projects/LVGL_Demo_Lovyan) ) :
 
-- Create a new project in PlatformIO
+- Create a new project in PlatformIO :
   - Name : LVGL_Demo
   - Board : Espressif ESP32 Dev Module
   - Framework : Arduino
@@ -258,7 +259,7 @@ Use PlatformIO with the LVGL Arduino Demo and [TFT_eSPI](/PlatformIO/Projects/LV
 - Before uploading :
   - If necessary set environment to "Default (LVGL_Demo)"
   - Connect the ESP32 DevKitC v4
-- Upload  ( [screenshot](/pictures/PlatformIO_Upload_LVGL.jpg) ) 
+- Press **Upload**( [screenshot](/pictures/PlatformIO_Upload_LVGL.jpg) ) 
 
 LVGL_Arduino_rx with rotation 0  and lv_demo_widgets();
 ![LVGL_Demo_PIO_01](pictures/LVGL_Demo_PIO_03.JPG)
