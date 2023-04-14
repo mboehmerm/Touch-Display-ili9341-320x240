@@ -223,9 +223,9 @@ Modified lines in Arduino\libraries\lv_conf.h :
 
 #  Use Visual Studio Code and PlatformIO <a name="pla"></a>
 
-![PlatfomIO](pictures/PlatformIO_Toolbar.png) ![PlatfomIO](pictures/Pio50.jpg)
+![PlatfomIO](pictures/PlatformIO_Toolbar.png)
 
-Test PlatformIO ![PlatfomIO](pictures/Pio25.jpg) with the TFT_eSPI graphicstest example :
+>Test PlatformIO ![PlatfomIO](pictures/Pio25.jpg) with the TFT_eSPI graphicstest example :
 - Default Windows PlatformIO folder : C:\Users\ "username"\Documents\PlatformIO
 - Install Visual Studio Code and PlatformIO :
   - https://platformio.org/install/ide?install=vscode
