@@ -14,13 +14,15 @@
 #include <demos/lv_demos.h>
 #include <examples/lv_examples.h>  //#include <../examples/lv_examples.h>
 
-// PlatformIO doesn't find .c files in subdirectories ? Arduino IDE does. 
-#include <examples/widgets/btn/lv_example_btn_1.c>
-#include <examples/widgets/msgbox/lv_example_msgbox_1.c>
-#include <examples/widgets/menu/lv_example_menu_1.c>
-#include <examples/widgets/tabview/lv_example_tabview_1.c>
-#include <examples/get_started/lv_example_get_started_1.c>
-// ...
+// Only for PlatformIO. PlatformIO doesn't find *.c files in subdirectories ? Arduino IDE does. 
+#ifdef PLATFORMIO
+  #include <examples/widgets/btn/lv_example_btn_1.c>
+  #include <examples/widgets/msgbox/lv_example_msgbox_1.c>
+  #include <examples/widgets/menu/lv_example_menu_1.c>
+  #include <examples/widgets/tabview/lv_example_tabview_1.c>
+  #include <examples/get_started/lv_example_get_started_1.c>
+  // ...
+#endif
 
 //#define LGFX_ESP32_ILI9341       // use configuration file ?
 #ifdef LGFX_ESP32_ILI9341
