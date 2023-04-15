@@ -212,7 +212,7 @@ void setup()
   // ...
 
   lv_demo_widgets();               // OK ( OK = enabled in lv_conf.h or platform.ini)
-  // lv_demo_benchmark();          // OK weighted FPS/Max : 27/68fps (40MHz), 34/87fps(80MHz), ST7735 50/??fps
+  // lv_demo_benchmark();          // OK, LovyanGFX : weighted FPS/Max Rotation 1 : 26/72fps (40MHz), 30/86fps  (80MHz)
   // lv_demo_keypad_encoder();     // OK works, but I haven't an encoder
   // lv_demo_music();              // Ok ?
   // lv_demo_printer();            // MISSING

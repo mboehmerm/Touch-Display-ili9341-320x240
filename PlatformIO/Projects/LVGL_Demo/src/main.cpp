@@ -169,7 +169,7 @@ void setup()
     // ...
 
     lv_demo_widgets();               // OK ( OK = enabled in lv_conf.h or platform.ini)
-    // lv_demo_benchmark();          // OK
+    // lv_demo_benchmark();          // OK, TFT_eSPI  : weighted FPS/Max Rotation 1 : 30/82fps (40MHz), 36/106fps (80MHz)
     // lv_demo_keypad_encoder();     // OK works, but I haven't an encoder
     // lv_demo_music();              // Ok ?
     // lv_demo_printer();            // MISSING
