@@ -14,7 +14,7 @@
 #include <demos/lv_demos.h>
 #include <examples/lv_examples.h>  //#include <../examples/lv_examples.h>
 
-//#define LGFX_ESP32_ILI9341
+//#define LGFX_ESP32_ILI9341       // use configuration file ?
 #ifdef LGFX_ESP32_ILI9341
   #include <../../LGFX_ESP32_ILI9341.hpp>  // Path Arduino/libraries/ or LVGL_Demo_PIO/.pio/libdeps/esp32dev/
 #else  
@@ -38,7 +38,7 @@ public:
       cfg.spi_mode    = 0;                //  Set SPI communication mode (0 ~ 3)
       cfg.freq_write  = 40000000;         //  80000000 // SPI clock frequency when sending (max 80MHz, rounded to 80MHz divided by an integer)
       cfg.freq_read   = 16000000;         //  SPI clock frequency when receiving 
-      cfg.spi_3wire   = true;             //  Set true if receiving on the MOSI 
+      cfg.spi_3wire   = false;            //  Set true if receiving on the MOSI 
       cfg.use_lock    = true;             //  set true to use transaction 
       cfg.dma_channel = SPI_DMA_CH_AUTO;  //  Set the DMA channel to use (0=not use DMA / 1=1ch / 2=ch / SPI_DMA_CH_AUTO=auto setting) 
       //  * With the ESP-IDF version upgrade, SPI_DMA_CH_AUTO (automatic setting) is recommended for the DMA channel.   Specifying 1ch and 2ch is deprecated. 
@@ -125,9 +125,12 @@ LGFX tft;
   static const uint16_t screenHeight = 320;
 #endif
 
+//static lv_color_t buf[ screenWidth * 10 ];
+
+#define SIZE_SCREEN_BUFFER screenWidth * screenHeight / 4   // set the screen buffer size
+//#define SIZE_SCREEN_BUFFER screenWidth * 10               // smaller if build error
 static lv_disp_draw_buf_t draw_buf;
-static lv_color_t buf[ screenWidth * screenHeight / 4 ];    // screen buffer size
-//static lv_color_t buf[ screenWidth * 10 ];                // smaller if compile error
+static lv_color_t buf[ SIZE_SCREEN_BUFFER ];
 
 // ------------------------------------------------------------------------------------------ //
 /* Display flushing */
@@ -162,11 +165,11 @@ void my_touchpad_read( lv_indev_drv_t * indev_driver, lv_indev_data_t * data )
       data->point.x = touchX;
       data->point.y = touchY;
 
-      Serial.print( "Data x " );
-      Serial.println( touchX );
+      //Serial.print( "Data x " );
+      //Serial.println( touchX );
 
-      Serial.print( "Data y " );
-      Serial.println( touchY );
+      //Serial.print( "Data y " );
+      //Serial.println( touchY );
    }
 }
 // ------------------------------------------------------------------------------------------ //
@@ -182,7 +185,7 @@ void setup()
   tft.setTouchCalibrate(calData);
 
   lv_init();
-  lv_disp_draw_buf_init( &draw_buf, buf, NULL, screenWidth * 10 );
+  lv_disp_draw_buf_init( &draw_buf, buf, NULL, SIZE_SCREEN_BUFFER );    // set screen buffer size
 
   /*Initialize the display*/
   static lv_disp_drv_t disp_drv;
@@ -212,7 +215,11 @@ void setup()
   // ...
 
   lv_demo_widgets();               // OK ( OK = enabled in lv_conf.h or platform.ini)
-  // lv_demo_benchmark();          // OK weighted FPS/Max : 27/68fps (40MHz), 34/87fps(80MHz), ST7735 50/??fps
+  // lv_demo_benchmark();          // OK, Results Rotation 1 :
+  //   LovyanGFX : weighted FPS/Max, small  buffer : 26/72fps  (40MHz), 30/86fps  (80MHz) 
+  //   LovyanGFX : weighted FPS/Max, bigger buffer : 39/106fps (40MHz), 51/142fps (80MHz)
+  //   TFT_eSPI  : weighted FPS/Max, small  buffer : 28/79fps  (40MHz), 35/94fps  (80MHz)
+  //   TFT_eSPI  : weighted FPS/Max, big    buffer : 38/101fps (40MHz), 50/137fps (80MHz)
   // lv_demo_keypad_encoder();     // OK works, but I haven't an encoder
   // lv_demo_music();              // Ok ?
   // lv_demo_printer();            // MISSING
@@ -224,6 +231,8 @@ void loop()
    lv_timer_handler(); /* let the GUI do its work */
    delay( 5 );
 }
+// ------------------------------------------------------------------------------------------ //
+// using an example inside of main.cpp 
 // ------------------------------------------------------------------------------------------ //
 /*
 static void btn_event_cb(lv_event_t * e)
@@ -239,7 +248,7 @@ static void btn_event_cb(lv_event_t * e)
         lv_label_set_text_fmt(label, "Button: %d", cnt);
     }
 }
-
+// ------------------------------------------------------------------------------------------ //
 // Create a button with a label and react on click event.
 void lv_example_get_started_1(void)
 {

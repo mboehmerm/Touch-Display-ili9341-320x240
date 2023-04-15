@@ -12,23 +12,24 @@
  Note that the `lv_examples` library is for LVGL v7 and you shouldn't install it for this version (since LVGL v8)
  as the examples and demos are now part of the main LVGL library. */
 
-#include <demos/lv_demos.h>                               //!! lvgl/src/demos
-#include <examples/lv_examples.h>                         //!! lvgl/src/examples
+#include <demos/lv_demos.h>                                 //!! lvgl/src/demos
+#include <examples/lv_examples.h>                           //!! lvgl/src/examples
 
-#define SCREEN_ROTATION 0                                 // set the screen rotation
+#define SCREEN_ROTATION 1                                   // set the screen rotation
 
 /*Change to your screen resolution*/
 #if (SCREEN_ROTATION == 1) || (SCREEN_ROTATION == 3)
-  static const uint16_t screenWidth  = 320;               // rotation 1 or 3
+  static const uint16_t screenWidth  = 320;                 // rotation 1 or 3
   static const uint16_t screenHeight = 240;
 #else  
-  static const uint16_t screenWidth  = 240;               // rotation 0 or 2
+  static const uint16_t screenWidth  = 240;                 // rotation 0 or 2
   static const uint16_t screenHeight = 320;
 #endif
 
+#define SIZE_SCREEN_BUFFER screenWidth * screenHeight / 4   // set screen buffer size
+//#define SIZE_SCREEN_BUFFER screenWidth * 10               // smaller if build error
 static lv_disp_draw_buf_t draw_buf;
-static lv_color_t buf[ screenWidth * screenHeight / 4 ];  // screen buffer size
-//static lv_color_t buf[ screenWidth * 10 ];              // smaller if compile error
+static lv_color_t buf[ SIZE_SCREEN_BUFFER ];
 
 TFT_eSPI tft = TFT_eSPI(screenWidth, screenHeight);
 
@@ -81,11 +82,11 @@ void my_touchpad_read( lv_indev_drv_t * indev_driver, lv_indev_data_t * data )  
           data->point.y = touchY;
         #endif
 
-        Serial.print( "Data x " );
-        Serial.println( touchX );
+        //Serial.print( "Data x " );
+        //Serial.println( touchX );
 
-        Serial.print( "Data y " );
-        Serial.println( touchY );
+        //Serial.print( "Data y " );
+        //Serial.println( touchY );
     }
 }
 // ------------------------------------------------------------------------------------------ //
@@ -123,7 +124,7 @@ void setup()
     
     tft.setTouch( calData );
 
-    lv_disp_draw_buf_init( &draw_buf, buf, NULL, screenWidth * 10 );
+    lv_disp_draw_buf_init( &draw_buf, buf, NULL, SIZE_SCREEN_BUFFER );    // set Screen Buffer
 
     /*Initialize the display*/
     static lv_disp_drv_t disp_drv;  //!!modified
@@ -153,14 +154,18 @@ void setup()
     // lv_example_btn_1();            
     // lv_example_msgbox_1();
     // lv_example_menu_1();
-    // lv_example_tabview_();
+    // lv_example_tabview_1();
     // lv_example_get_started_1();
-    // ... ( more examples in folder Arduino\libraries\lvgl\src\examples\ )
+    // ...
 
-       lv_demo_widgets();            // OK ( OK = enabled in Arduino/libraries/lv_conf.h )
-    // lv_demo_benchmark();          // OK
+    lv_demo_widgets();               // OK ( OK = enabled in lv_conf.h or platform.ini)
+    // lv_demo_benchmark();          // OK, Results Rotation 1 : 
+    //   TFT_eSPI  : weighted FPS/Max, small  buffer : 28/79fps  (40MHz), 35/94fps  (80MHz)
+    //   TFT_eSPI  : weighted FPS/Max, big    buffer : 38/101fps (40MHz), 50/137fps (80MHz)
+    //   LovyanGFX : weighted FPS/Max, small  buffer : 26/72fps  (40MHz), 30/86fps  (80MHz) 
+    //   LovyanGFX : weighted FPS/Max, big    buffer : 39/106fps (40MHz), 51/142fps (80MHz)
     // lv_demo_keypad_encoder();     // OK works, but I haven't an encoder
-    // lv_demo_music();              // OK ?
+    // lv_demo_music();              // Ok ?
     // lv_demo_printer();            // MISSING
     // lv_demo_stress();             // OK
 #endif
