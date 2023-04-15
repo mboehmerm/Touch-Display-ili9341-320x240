@@ -92,9 +92,9 @@ public:
       // * Due to the ESP-IDF version upgrade, VSPI_HOST and HSPI_HOST descriptions are deprecated,
       // so if an error occurs, use SPI2_HOST and SPI3_HOST instead.
       cfg.spi_mode    = 0;               // Set SPI communication mode (0 ~ 3)
-      cfg.freq_write  = 80000000;        // SPI clock when sending (up to 80MHz, rounded to 80MHz divided by an integer)
+      cfg.freq_write  = 40000000;        // SPI clock when sending (up to 80MHz, rounded to 80MHz divided by an integer)
       cfg.freq_read   = 16000000;        // SPI clock when receiving
-      cfg.spi_3wire   = true;            // Set true if receiving on the MOSI 
+      cfg.spi_3wire   = false;           // Set true if receiving on the MOSI 
       cfg.use_lock    = true;            // Set true to use transaction lock
       cfg.dma_channel = SPI_DMA_CH_AUTO; // Set the DMA channel to use (0=not use DMA / 1=1ch / 2=ch / SPI_DMA_CH_AUTO=auto setting)
       // * With the ESP-IDF version upgrade, SPI_DMA_CH_AUTO (automatic setting) is recommended for the DMA channel.  
