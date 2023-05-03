@@ -31,11 +31,14 @@
 
 // Setup file in folder Arduino/libraries (updates will not overwrite your setups)
 //#include <../Setup401_ST7735_Touch.h>         // new : Setup file for  ST7735 1.8" with touch, ST7735_GREENTAB2
-#include <../Setup402_ILI9341_Touch.h>          // new : Setup file for ili9341 2.8" with touch, 40MHz
+#include <../Setup402_ILI9341_Touch.h>        // new : Setup file for ili9341 2.8" with touch, 40MHz
 //#include <../Setup403_ILI9341_Touch_80MHz.h>  // new : Setup file for ili9341 2.8" with touch, 80MHz
+//#include <../Setup404_ILI9341_Touch_CS14.h>   // CS Pin changed : 15 -> 14
+//#include <../Setup411_S3_ST7735_Touch.h>      // ESP32-S3 , ST7735
+//#include <../Setup412_S3_ILI9341_Touch.h>     // ESP32-S3 , ili9341
 
-//#include <User_Setups/Setup404_xxxxxx.h> // Setup file für ESP32 xxxx
-//#include <../Setup404_xxxxxx.h>          // Setup file für ESP32 xxxx
+//#include <User_Setups/Setup405_xxxxxx.h> // Setup file für ESP32 xxxx
+//#include <../Setup405_xxxxxx.h>          // Setup file für ESP32 xxxx
 
 //#include <User_Setups/Setup1_ILI9341.h>  // Setup file for ESP8266 configured for my ILI9341
 //#include <User_Setups/Setup2_ST7735.h>   // Setup file for ESP8266 configured for my ST7735
