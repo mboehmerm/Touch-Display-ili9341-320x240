@@ -31,9 +31,21 @@ Share SPI MOSI, MISO and CLK, so you need only 11 Pin's for 3 SPI devices.
 
 TFT_SDO works stable with 16MHz (TFT_ReadWrite_Test.ino).
 
+## Quick installation
+- Arduino :
+  - Install the libraries "lvgl", "TFT_eSPI" and "LovyanGFX".
+  - Copy the program file(s) from the folder "Arduino/" and especially "Arduino/libraries/", which contain all configuration files and the library "ESP32-USB-Soft-Host-main" version 1.0.4 .
+  - Copy the demos folder "Arduino\libraries\lvgl\demos" to "Arduino\libraries\lvgl\ **src**\demos"
+  - Copy the examples folder "Arduino\libraries\lvgl\examples" to "Arduino\libraries\lvgl\ **src**\examples".
+- PlatformIO :
+  - Copy all files from the folder "PlatformIO/LVGL_Demo_USB_kbd/" or "PlatformIO/LVGL_Demo_USB_Lovyan_kbd/" to your project folder.
+  - PlatformIO should now install the missing libraries.
+  - Copy the folder ".pio/libdeps/esp32dev/lvgl/demos" to ".pio/libdeps/esp32-s3-devkitc-1/lvgl/ **src**/demos".
+  - Copy the folder ".pio/libdeps/esp32dev/lvgl/examples" to ".pio/libdeps/esp32-s3-devkitc-1/lvgl/ **src**/examples". 
+
 ## Install and configure the library TFT_eSPI 2.5.0 <a name="espi"></a>
 - Default Windows Arduino folder : C:\Users\<username>\Documents\Arduino
-- Edit the file : Arduino\libraries\TFT_eSPI\User_Setup.h ( [Link](/Arduino/libraries/TFT_eSPI/User_Setup.h) )
+- Copy from above or edit the file : Arduino\libraries\TFT_eSPI\User_Setup.h ( [Link](/Arduino/libraries/TFT_eSPI/User_Setup.h) )
 - Test : [TFT_graphicstest_PDQ_ili9341_Touch](/Arduino/TFT_graphicstest_PDQ_ili9341_Touch/TFT_graphicstest_PDQ_ili9341_Touch.ino) (works with TFT_eSPI or LovyanGFX)
 
 ![TFT_eSPI](pictures/Graphicstest_03.jpg)
@@ -76,7 +88,7 @@ Edit Arduino\libraries\TFT_eSPI\User_Setup.h :
 ```
 
 ## Alternative configuration of the library TFT_eSPI 2.5.0
-- Create a new file with your configuration data : Arduino\libraries\Setup402_ILI9341_Touch.h ( [Link](/Arduino/libraries/Setup402_ILI9341_Touch.h) )
+- Copy from above or create a new file with your configuration data : Arduino\libraries\Setup402_ILI9341_Touch.h ( [Link](/Arduino/libraries/Setup402_ILI9341_Touch.h) )
 - Edit the file : Arduino\libraries\TFT_eSPI\User_Setup_Select.h ( [Link](/Arduino/libraries/TFT_eSPI/User_Setup_Select.h) )
 
 Edit User_Setup_select.h :
@@ -92,7 +104,7 @@ Edit User_Setup_select.h :
 ```
 
 ## Install and configure the library LovyanGFX 1.1.5 <a name="lov"></a>
-- Create the file : Arduino\libraries\LovyanGFX\src\LGFX_ESP32_ILI9341.hpp ( [Link](/Arduino/libraries/LovyanGFX/src/LGFX_ESP32_ILI9341.hpp) )
+- Copy from above or create the file : Arduino\libraries\LovyanGFX\src\LGFX_ESP32_ILI9341.hpp ( [Link](/Arduino/libraries/LovyanGFX/src/LGFX_ESP32_ILI9341.hpp) )
 - Test : [Lovyan_Touch_Test](/Arduino/Lovyan_Touch_Test/Lovyan_Touch_Test.ino) and [TFT_graphicstest_PDQ_ili9341_Touch](/Arduino/TFT_graphicstest_PDQ_ili9341_Touch/TFT_graphicstest_PDQ_ili9341_Touch.ino)
 
 ![Lovyan Touch TestTFT](pictures/Lovyan_Touch_Test.jpg)
