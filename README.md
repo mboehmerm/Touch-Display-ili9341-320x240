@@ -38,7 +38,7 @@ TFT_SDO works stable with 16MHz (TFT_ReadWrite_Test.ino).
   - Copy the demos folder "Arduino\libraries\lvgl\demos" to "Arduino\libraries\lvgl\ **src**\demos"
   - Copy the examples folder "Arduino\libraries\lvgl\examples" to "Arduino\libraries\lvgl\ **src**\examples".
 - PlatformIO :
-  - Copy all files from the folder "PlatformIO/LVGL_Demo_USB_kbd/" or "PlatformIO/LVGL_Demo_USB_Lovyan_kbd/" to your project folder.
+  - Copy all file(s) from the folder "PlatformIO/procects/xxx" to your project folder.
   - PlatformIO should now install the missing libraries.
   - Copy the folder ".pio/libdeps/esp32dev/lvgl/demos" to ".pio/libdeps/esp32-s3-devkitc-1/lvgl/ **src**/demos".
   - Copy the folder ".pio/libdeps/esp32dev/lvgl/examples" to ".pio/libdeps/esp32-s3-devkitc-1/lvgl/ **src**/examples". 
